@@ -1,0 +1,23 @@
+{
+  "typescript.suggest.autoImports": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "window.openFilesInNewWindow": "off",
+  "security.workspace.trust.untrustedFiles": "open",
+  "explorer.autoReveal": true,
+  "editor.lineNumbers": "on",
+  "workbench.editor.enablePreview": false,
+  "editor.renderControlCharacters": true,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "[css]": {
+    "editor.defaultFormatter": "aeschli.vscode-css-formatter"
+  },
+  "[ahk]": {
+    "editor.defaultFormatter": "cweijan.vscode-autohotkey-plus"
+  },
+  "[ts]": {
+    "editor.tabSize": 2
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "pasteImage.path": "${currentFileDir}/images"
+}
