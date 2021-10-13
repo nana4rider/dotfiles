@@ -12,12 +12,11 @@
   "[css]": {
     "editor.defaultFormatter": "aeschli.vscode-css-formatter"
   },
-  "[ahk]": {
-    "editor.defaultFormatter": "cweijan.vscode-autohotkey-plus"
-  },
   "[ts]": {
     "editor.tabSize": 2
   },
   "workbench.iconTheme": "material-icon-theme",
-  "pasteImage.path": "${currentFileDir}/images"
+  "pasteImage.path": "${currentFileDir}/images",
+  "terminal.external.windowsExec": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+  "diffEditor.ignoreTrimWhitespace": false
 }
