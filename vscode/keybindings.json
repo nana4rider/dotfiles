@@ -2,7 +2,12 @@
   // キーバインドの設定
   {
     "key": "ctrl+shift+,",
-    "command": "workbench.action.openGlobalKeybindings"
+    "command": "workbench.action.openGlobalKeybindingsFile"
+  },
+  // 設定
+  {
+    "key": "ctrl+oem_comma",
+    "command": "workbench.action.openSettingsJson"
   },
   // 新しいファイル
   {
@@ -565,5 +570,9 @@
   {
     "key": "ctrl+j",
     "command": "-workbench.action.togglePanel"
+  },
+  {
+    "key": "ctrl+oem_comma",
+    "command": "-workbench.action.openSettings"
   }
 ]
