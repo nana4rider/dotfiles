@@ -135,7 +135,7 @@
     // タブを閉じる
     {
       "command": "closeTab",
-      "keys": "ctrl+d"
+      "keys": "ctrl+shift+d"
     },
     // 接続先を開く
     {
