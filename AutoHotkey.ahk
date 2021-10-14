@@ -28,8 +28,8 @@
 ;   \\wsl$\Ubuntu\home\user -> /home/user
 ;   /tmp                    -> \\wsl$\Ubuntu\tmp
 !F19::
+    distroName := "Ubuntu-20.04"
     tmpClip := Trim(Clipboard)
-    distroName := "Ubuntu"
     
     if (RegExMatch(tmpClip, "^""(.+)""$", $)) {
         ; unwrap doublequote
