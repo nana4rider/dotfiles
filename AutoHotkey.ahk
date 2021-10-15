@@ -27,7 +27,7 @@
 ;   /mnt/c/Users/user       -> C:\Users\user
 ;   \\wsl$\Ubuntu\home\user -> /home/user
 ;   /tmp                    -> \\wsl$\Ubuntu\tmp
-!F19::
+^F19::
     distroName := "Ubuntu-20.04"
     tmpClip := Trim(Clipboard)
     
