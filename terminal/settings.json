@@ -75,6 +75,15 @@
         "backgroundImageAlignment": "bottomRight"
       },
       {
+        "guid": "{39ae8e83-36c7-4dcf-81a2-d41dd2e9af36}",
+        "name": "node",
+        "icon": "%USERPROFILE%\\Documents\\git\\others\\dotfiles\\terminal\\images\\nodejs.png",
+        "commandline": "wsl -e /home/nana4rider/bin/node",
+        "backgroundImage": "%USERPROFILE%\\Documents\\git\\others\\dotfiles\\terminal\\images\\nodejs.png",
+        "backgroundImageStretchMode": "none",
+        "backgroundImageAlignment": "bottomRight"
+      },
+      {
         "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
         "name": "Windows PowerShell",
         "commandline": "powershell.exe",
@@ -128,13 +137,13 @@
       "keys": "alt+shift+d"
     },
     // PowerShellを開く
-    {
-      "command": {
-        "action": "newTab",
-        "index": 0
-      },
-      "keys": "ctrl+t"
-    },
+    // {
+    //   "command": {
+    //     "action": "newTab",
+    //     "index": 0
+    //   },
+    //   "keys": "ctrl+t"
+    // },
     // タブを閉じる
     {
       "command": "closeTab",
