@@ -35,7 +35,8 @@
         "name": "pwsh",
         "commandline": "pwsh -WorkingDirectory ~",
         "colorScheme": "Campbell",
-        "backgroundImage": "%USERPROFILE%\\Documents\\git\\others\\dotfiles\\terminal\\images\\powershell.png",
+        "icon": "%USERPROFILE%\\Documents\\git\\others\\dotfiles\\terminal\\images\\icon\\powershell.ico",
+        "backgroundImage": "%USERPROFILE%\\Documents\\git\\others\\dotfiles\\terminal\\images\\background\\powershell.png",
         "backgroundImageStretchMode": "none",
         "backgroundImageAlignment": "bottomRight"
       },
@@ -43,43 +44,44 @@
         "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
         "name": "Ubuntu-20.04",
         "source": "Windows.Terminal.Wsl",
-        "backgroundImage": "%USERPROFILE%\\Documents\\git\\others\\dotfiles\\terminal\\images\\ubuntu.png",
+        "icon": "%USERPROFILE%\\Documents\\git\\others\\dotfiles\\terminal\\images\\icon\\ubuntu.ico",
+        "backgroundImage": "%USERPROFILE%\\Documents\\git\\others\\dotfiles\\terminal\\images\\background\\ubuntu.png",
         "backgroundImageStretchMode": "none",
         "backgroundImageAlignment": "bottomRight"
       },
       {
         "guid": "{6db862ec-c3b8-4921-997c-2d4dcff5bf30}",
         "name": "Raspberry Pi 4 [寝室]",
-        "icon": "%USERPROFILE%\\Documents\\git\\others\\dotfiles\\terminal\\images\\raspberry-pi.png",
         "commandline": "ssh nana4rider@192.168.1.30 -o ServerAliveInterval=60",
-        "backgroundImage": "%USERPROFILE%\\Documents\\git\\others\\dotfiles\\terminal\\images\\raspberry-pi.png",
+        "icon": "%USERPROFILE%\\Documents\\git\\others\\dotfiles\\terminal\\images\\icon\\raspberry-pi.ico",
+        "backgroundImage": "%USERPROFILE%\\Documents\\git\\others\\dotfiles\\terminal\\images\\background\\raspberry-pi.png",
         "backgroundImageStretchMode": "none",
         "backgroundImageAlignment": "bottomRight"
       },
       {
         "guid": "{0b72c3c9-059e-42dd-8f44-c0822c78e2e6}",
         "name": "Raspberry Pi Zero [玄関]",
-        "icon": "%USERPROFILE%\\Documents\\git\\others\\dotfiles\\terminal\\images\\raspberry-pi.png",
         "commandline": "ssh nana4rider@192.168.1.31 -o ServerAliveInterval=60",
-        "backgroundImage": "%USERPROFILE%\\Documents\\git\\others\\dotfiles\\terminal\\images\\raspberry-pi.png",
+        "icon": "%USERPROFILE%\\Documents\\git\\others\\dotfiles\\terminal\\images\\icon\\raspberry-pi.ico",
+        "backgroundImage": "%USERPROFILE%\\Documents\\git\\others\\dotfiles\\terminal\\images\\background\\raspberry-pi.png",
         "backgroundImageStretchMode": "none",
         "backgroundImageAlignment": "bottomRight"
       },
       {
         "guid": "{210567c9-3a86-4969-b9b4-d0c316bffc78}",
         "name": "Raspberry Pi Zero [勝手口]",
-        "icon": "%USERPROFILE%\\Documents\\git\\others\\dotfiles\\terminal\\images\\raspberry-pi.png",
         "commandline": "ssh nana4rider@192.168.1.32 -o ServerAliveInterval=60",
-        "backgroundImage": "%USERPROFILE%\\Documents\\git\\others\\dotfiles\\terminal\\images\\raspberry-pi.png",
+        "icon": "%USERPROFILE%\\Documents\\git\\others\\dotfiles\\terminal\\images\\icon\\raspberry-pi.ico",
+        "backgroundImage": "%USERPROFILE%\\Documents\\git\\others\\dotfiles\\terminal\\images\\background\\raspberry-pi.png",
         "backgroundImageStretchMode": "none",
         "backgroundImageAlignment": "bottomRight"
       },
       {
         "guid": "{39ae8e83-36c7-4dcf-81a2-d41dd2e9af36}",
         "name": "node",
-        "icon": "%USERPROFILE%\\Documents\\git\\others\\dotfiles\\terminal\\images\\nodejs.png",
         "commandline": "wsl -e /home/nana4rider/bin/node",
-        "backgroundImage": "%USERPROFILE%\\Documents\\git\\others\\dotfiles\\terminal\\images\\nodejs.png",
+        "icon": "%USERPROFILE%\\Documents\\git\\others\\dotfiles\\terminal\\images\\icon\\node.ico",
+        "backgroundImage": "%USERPROFILE%\\Documents\\git\\others\\dotfiles\\terminal\\images\\background\\node.png",
         "backgroundImageStretchMode": "none",
         "backgroundImageAlignment": "bottomRight"
       },
