@@ -47,8 +47,9 @@
         select := "/select" . Chr(44)
         Run, "%fileExplorer%" %select%"%filePath%"
     } else {
-        ; ファイルが存在しない場合はクイックアクセスを開く
-        Run, "%fileExplorer%" ::{679f85cb-0220-4080-b29b-5540cc05aab6}
+        ; ファイルが存在しない場合はホームディレクトリを開く
+        EnvGet, userProfile, USER_PROFILE
+        Run, "%fileExplorer%" "%userProfile%"
     }
 return
 
