@@ -17,63 +17,99 @@
 ^p::Send, {Up}
 #If
 
-#if WinGetProcessName() = "WindowsTerminal.exe" && WinGetTitle() = "Ubuntu"
-^Left::Send, {ESC}{b}
-^Right::Send, {ESC}{f}
-#If
-
-; Example:
-;   C:\Program Files (x86)  -> "/mnt/c/Program Files (x86)"
-;   /mnt/c/Users/user       -> C:\Users\user
-;   \\wsl$\Ubuntu\home\user -> /home/user
-;   /tmp                    -> \\wsl$\Ubuntu\tmp
-^F19::
-    distroName := "Ubuntu-20.04"
-    tmpClip := Trim(Clipboard)
+; Win+Eを、クリップボードの内容を元に開くコマンドに変更
+; 環境変数 FILE_EXPLORER にTablacus Explorerのパスを設定しておく
+#e::
+    EnvGet, fileExplorer, FILE_EXPLORER
     
+    filePath := Trim(Clipboard)
+    if (RegExMatch(filePath, "^""(.+)""$", $)) {
+        filePath := $1
+    }
+    
+    ; クリップボードの中身がURIの場合は関連付けで開く
+    if (RegExMatch(filePath, "^\w+://")) {
+        Run, "%ComSpec%" /c start %filePath%, , Hide
+        exit
+    }
+    
+    ; WSLパスの場合はWindowsパスに変換する
+    if (RegExMatch(filePath, "^/")) {
+        filePath := ToggleFilePath(filePath)
+    }
+    
+    fileAttr := FileExist(filePath)
+    if (RegExMatch(fileAttr, "D")) {
+        ; ディレクトリの場合はそのまま開く
+        Run, "%fileExplorer%" "%filePath%"
+    } else if (fileAttr) {
+        ; ファイルの場合はフォーカスを当てた状態で開く
+        select := "/select" . Chr(44)
+        Run, "%fileExplorer%" %select%"%filePath%"
+    } else {
+        ; ファイルが存在しない場合はクイックアクセスを開く
+        Run, "%fileExplorer%" ::{679f85cb-0220-4080-b29b-5540cc05aab6}
+    }
+return
+
+; クリップボードのWindowsとWLSのパスを相互変換
+; パスにスペースが含まれる場合はダブルクォートで囲みます。
+^F19::
+    tmpClip := Trim(Clipboard)
     if (RegExMatch(tmpClip, "^""(.+)""$", $)) {
-        ; unwrap doublequote
+        ; unwrap double quote
         tmpClip := $1
     }
     
-    if (RegExMatch(tmpClip, "^/")) {
-        ; unescape single/backquote
-        tmpClip := RegExReplace(tmpClip, "\\(?=[``'])", "")
-    }
-    
-    if (RegExMatch(tmpClip, "^([a-zA-Z]):(.+)", $)) {
-        ; Win -> WSL
-        StringLower, letter, $1
-        tmpClip := "/mnt/" . letter . RegExReplace($2, "\\", "/")
-    } else if (RegExMatch(tmpClip, "^/mnt/([a-z])(.+)", $)) {
-        ; WSL -> Win
-        StringUpper, letter, $1
-        tmpClip := letter . ":" . RegExReplace($2, "/", "\")
-    } else if (RegExMatch(tmpClip, "^\\\\wsl\$\\[^\\]+\\?(.+)", $)) {
-        ; UNC(WSL) -> WSL
-        tmpClip := "/" . RegExReplace($1, "\\", "/")
-    } else if (RegExMatch(tmpClip, "^(/.+)", $)) {
-        ; WSL -> UNC(WSL)
-        tmpClip := "\\wsl$\" . distroName . RegExReplace($1, "/", "\")
-    }
-    
-    if (RegExMatch(tmpClip, "^/")) {
-        ; escape single/backquote
-        tmpClip := RegExReplace(tmpClip, "(?=[``'])", "\")
-    }
+    tmpClip := ToggleFilePath(tmpClip)
     
     if (RegExMatch(tmpClip, " ")) {
-        ; wrap doublequote
+        ; wrap double quote
         tmpClip := """" . tmpClip . """"
     }
     
     Clipboard := tmpClip
 return
 
-; #if WinGetProcessName() = "RLogin.exe"
-; ^Left::Send, {ESC}{b}
-; ^Right::Send, {ESC}{f}
-; #If
+; WindowsとWLSのパスを相互変換
+; Example:
+;   C:\Users\user  -> /mnt/c/Users/user
+;   /mnt/c/Users/user       -> C:\Users\user
+;   \\wsl$\Ubuntu\home\user -> /home/user
+;   /tmp                    -> \\wsl$\Ubuntu\tmp
+ToggleFilePath(filePath)
+{
+    ; /mnt/[A-Z] 以外のWSLパスをUNCに変換する場合のディストリビューション名
+    distroName := "Ubuntu-20.04"
+    
+    if (RegExMatch(filePath, "^/")) {
+        ; unescape single/back quote
+        filePath := RegExReplace(filePath, "\\(?=[``'])", "")
+    }
+    
+    if (RegExMatch(filePath, "^([a-zA-Z]):(.+)", $)) {
+        ; Win -> WSL
+        StringLower, letter, $1
+        filePath := "/mnt/" . letter . RegExReplace($2, "\\", "/")
+    } else if (RegExMatch(filePath, "^/mnt/([a-z])(.+)", $)) {
+        ; WSL -> Win
+        StringUpper, letter, $1
+        filePath := letter . ":" . RegExReplace($2, "/", "\")
+    } else if (RegExMatch(filePath, "^\\\\wsl\$\\[^\\]+\\?(.+)", $)) {
+        ; UNC(WSL) -> WSL
+        filePath := "/" . RegExReplace($1, "\\", "/")
+    } else if (RegExMatch(filePath, "^(/.+)", $)) {
+        ; WSL -> UNC(WSL)
+        filePath := "\\wsl$\" . distroName . RegExReplace($1, "/", "\")
+    }
+    
+    if (RegExMatch(filePath, "^/")) {
+        ; escape single/back quote
+        filePath := RegExReplace(filePath, "(?=[``'])", "\")
+    }
+    
+    return filePath
+}
 
 WinGetProcessName(WinTitle = "A")
 {
