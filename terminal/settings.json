@@ -35,7 +35,8 @@
       {
         "guid": "{ae988df8-e500-48c7-9267-630bfa8f7a4b}",
         "name": "pwsh",
-        "commandline": "pwsh -WorkingDirectory ~",
+        "commandline": "pwsh",
+        "startingDirectory" : "%USERPROFILE%",
         "colorScheme": "Campbell",
         "icon": "%USERPROFILE%\\Documents\\repository\\others\\dotfiles\\terminal\\images\\icon\\powershell.ico",
         "backgroundImage": "%USERPROFILE%\\Documents\\repository\\others\\dotfiles\\terminal\\images\\background\\powershell.png",
@@ -44,8 +45,9 @@
       },
       {
         "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
-        "name": "Ubuntu-20.04",
-        "source": "Windows.Terminal.Wsl",
+        "name": "bash",
+        "commandline": "wsl -d Ubuntu-20.04",
+        "startingDirectory" : "\\\\wsl$\\Ubuntu-20.04\\home\\nana4rider",
         "icon": "%USERPROFILE%\\Documents\\repository\\others\\dotfiles\\terminal\\images\\icon\\ubuntu.ico",
         "backgroundImage": "%USERPROFILE%\\Documents\\repository\\others\\dotfiles\\terminal\\images\\background\\ubuntu.png",
         "backgroundImageStretchMode": "none",
