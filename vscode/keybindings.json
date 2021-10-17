@@ -176,6 +176,10 @@
     "when": "inFilesPicker && inQuickOpen"
   },
   {
+    "key": "alt+f13",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
     "key": "f14",
     "command": "workbench.action.findInFiles"
   },
@@ -574,5 +578,9 @@
   {
     "key": "ctrl+oem_comma",
     "command": "-workbench.action.openSettings"
+  },
+  {
+    "key": "ctrl+b",
+    "command": "-workbench.action.toggleSidebarVisibility"
   }
 ]
