@@ -1,9 +1,36 @@
 #InstallKeybdHook
 #useHook On
 
-#space::return
+; 日英切り替えを無効
+#Space::return
+; Win+Ctrl+Shift+Rで再読み込み
+#+^r::Reload
 
-#^r::Reload
+#IfWinActive, ahk_exe A5M2.exe
+; A5M2にて新規SQLをCtrl-Tで開く
+^t::
+    Send, ^n
+    Sleep 50
+    Send, {Enter}
+    Sleep 1500
+    Send, {F8}
+return
+; F13でツリーにフォーカス
+F13::Send, {F7}
+; F19でエディタにフォーカス
+F19::Send, {F8}
+^s::Send, ^+r
+^o::
+    Send, !e
+    Sleep 50
+    Send, 0
+return
+#IfWinActive
+
+; A5M2にて新規SQLをCtrl-Tで開く
+#IfWinActive, ahk_exe Slack.exe
+F16::Send, ^!+c
+#IfWinActive
 
 ; like bash
 #if WinGetProcessName() = "WindowsTerminal.exe" && WinGetTitle() = "pwsh"
@@ -17,41 +44,134 @@
 ^p::Send, {Up}
 #If
 
-; Win+Eを、クリップボードの内容を元に開くコマンドに変更
+; Win+Ctrl+i IN clause
+#^i::
+    tmpclip := clipboard
+    if (InStr(tmpclip, "IN(") != 0) {
+        exit
+    }
+    if (InStr(tmpclip, "`r`n") != 0) {
+        tmpArray := StrSplit(tmpclip, "`r`n")
+    } else {
+        tmpArray := StrSplit(tmpclip, "`n")
+    }
+    clipString := ""
+    exists := Object()
+    loop, % tmpArray.Length() {
+        entry := Trim(tmpArray[A_Index])
+        if (!entry) {
+            Continue
+        }
+        if (!exists[entry]) {
+            exists[entry] := 1
+            clipString .= "'" . entry . "', "
+        }
+    }
+    if (clipString) {
+        clipboard := " IN(" . SubStr(clipString, 1, -1) . ") "
+    }
+return
+
+; Win+Rを、クリップボードの内容を元に関連付けで開くコマンドに変更
+#r::
+    EnvGet, fileExplorer, FILE_EXPLORER
+    
+    tmpclip := clipboard
+    if (InStr(tmpclip, "`r`n") != 0) {
+        tmpArray := StrSplit(tmpclip, "`r`n")
+    } else {
+        tmpArray := StrSplit(tmpclip, "`n")
+    }
+    tmpArray := uniqueArray(tmpArray)
+    
+    openCount := 0
+    loop, % tmpArray.Length() {
+        filePath := Trim(tmpArray[A_Index])
+        if (RegExMatch(filePath, "^""(.+)""$", $)) {
+            filePath := $1
+        }
+
+        ; クリップボードの中身がURIの場合は関連付けで開く
+        if (RegExMatch(filePath, "^\w+://")) {
+            Run, "%ComSpec%" /c start %filePath%, , Hide
+            openCount++
+            continue
+        }
+        
+        ; WSLパスの場合はWindowsパスに変換する
+        if (RegExMatch(filePath, "^/")) {
+            filePath := ToggleFilePath(filePath)
+        }
+        
+        fileAttr := FileExist(filePath)
+        if (RegExMatch(fileAttr, "D")) {
+            ; ディレクトリの場合はTablacus Explorerで開く
+            Run, "%fileExplorer%" "%filePath%"
+            openCount++
+        } else if (fileAttr) {
+            Run, "%filePath%"
+            openCount++
+        }
+    }
+    
+    ; クリップボードの内容で何も実行できなかった場合、ファイル名を指定して実行を開く
+    if (openCount = 0) {
+        Run, "%ComSpec%" /c start "" explorer Shell:::{2559a1f3-21d7-11d4-bdaf-00c04f60b9f0}, , Hide
+    }
+return
+
+; Win+Eを、クリップボードの内容を元にTablacus Explorerで開くコマンドに変更
 ; 環境変数 FILE_EXPLORER にTablacus Explorerのパスを設定しておく
 #e::
     EnvGet, fileExplorer, FILE_EXPLORER
     
-    filePath := Trim(Clipboard)
-    if (RegExMatch(filePath, "^""(.+)""$", $)) {
-        filePath := $1
-    }
-    
-    ; クリップボードの中身がURIの場合は関連付けで開く
-    if (RegExMatch(filePath, "^\w+://")) {
-        Run, "%ComSpec%" /c start %filePath%, , Hide
-        exit
-    }
-    
-    ; WSLパスの場合はWindowsパスに変換する
-    if (RegExMatch(filePath, "^/")) {
-        filePath := ToggleFilePath(filePath)
-    }
-    
-    fileAttr := FileExist(filePath)
-    if (RegExMatch(fileAttr, "D")) {
-        ; ディレクトリの場合はそのまま開く
-        Run, "%fileExplorer%" "%filePath%"
-    } else if (fileAttr) {
-        ; ファイルの場合はフォーカスを当てた状態で開く
-        select := "/select" . Chr(44)
-        Run, "%fileExplorer%" %select%"%filePath%"
+    tmpclip := clipboard
+    if (InStr(tmpclip, "`r`n") != 0) {
+        tmpArray := StrSplit(tmpclip, "`r`n")
     } else {
-        ; ファイルが存在しない場合はホームディレクトリを開く
-        EnvGet, userProfile, USER_PROFILE
-        Run, "%fileExplorer%" "%userProfile%"
+        tmpArray := StrSplit(tmpclip, "`n")
+    }
+    tmpArray := uniqueArray(tmpArray)
+    
+    openCount := 0
+    loop, % tmpArray.Length() {
+        filePath := Trim(tmpArray[A_Index])
+        if (RegExMatch(filePath, "^""(.+)""$", $)) {
+            filePath := $1
+        }
+        
+        ; WSLパスの場合はWindowsパスに変換する
+        if (RegExMatch(filePath, "^/")) {
+            filePath := ToggleFilePath(filePath)
+        }
+        
+        fileAttr := FileExist(filePath)
+        if (RegExMatch(fileAttr, "D")) {
+            ; ディレクトリの場合はそのまま開く
+            Run, "%fileExplorer%" "%filePath%"
+            openCount++
+        } else if (fileAttr) {
+            ; ファイルの場合はフォーカスを当てた状態で開く
+            select := "/select" . Chr(44)
+            Run, "%fileExplorer%" %select%"%filePath%"
+            openCount++
+        } else {
+            if (openCount = 0) {
+                ; ファイルが存在しない場合はホームディレクトリを開く
+                EnvGet, userProfile, USER_PROFILE
+                Run, "%fileExplorer%" "%userProfile%"
+            }
+            exit
+        }
     }
 return
+
+; Tablacus Explorerにおいて、アドレスバーやツリービューにフォーカス時
+; 一部ショートカットが効かない問題を解消する
+#if WinGetProcessName() = "TE64.exe" && (ControlGetFocus() = "SysTreeView321" || ControlGetFocus() = "Internet Explorer_Server1") ;
+^t::Send, {Tab}^t
+^w::Send, {Tab}^w
+#if
 
 ; クリップボードのWindowsとWLSのパスを相互変換
 ; パスにスペースが含まれる場合はダブルクォートで囲みます。
@@ -112,14 +232,41 @@ ToggleFilePath(filePath)
     return filePath
 }
 
+WinGetClass(WinTitle = "A")
+{
+    WinGetClass, OutputVar, %WinTitle%
+    Return, OutputVar
+}
+
 WinGetProcessName(WinTitle = "A")
 {
     WinGet, OutputVar, ProcessName, %WinTitle%
-    Return, OutputVar
+    return, OutputVar
 }
 
 WinGetTitle(WinTitle = "A")
 {
     WinGetTitle, OutputVar, %WinTitle%
     Return, OutputVar
+}
+
+ControlGetFocus(WinTitle = "A")
+{
+    ControlGetFocus, OutputVar, %WinTitle%
+    return, OutputVar
+}
+
+uniqueArray(nameArray)
+{
+    hash := {}
+    for i, name in nameArray {
+        hash[name] := null
+    }
+    
+    trimmedArray := []
+    for name, dummy in hash {
+        trimmedArray.Insert(name)
+    }
+    
+    return trimmedArray
 }
