@@ -45,7 +45,7 @@ F16::Send, ^!+c
 #If
 
 ; Win+Ctrl+i IN clause
-#^i::
+#i::
     tmpclip := clipboard
     if (InStr(tmpclip, "IN(") != 0) {
         exit
@@ -71,6 +71,9 @@ F16::Send, ^!+c
         clipboard := " IN(" . SubStr(clipString, 1, -1) . ") "
     }
 return
+
+; Win+Ctrl+Rを、オリジナルのWin+Rと同じ動作に変更
+#^r::Run, "%ComSpec%" /c start "" explorer Shell:::{2559a1f3-21d7-11d4-bdaf-00c04f60b9f0}, , Hide
 
 ; Win+Rを、クリップボードの内容を元に関連付けで開くコマンドに変更
 #r::
@@ -175,7 +178,7 @@ return
 
 ; クリップボードのWindowsとWLSのパスを相互変換
 ; パスにスペースが含まれる場合はダブルクォートで囲みます。
-^F19::
+#p::
     tmpClip := Trim(Clipboard)
     if (RegExMatch(tmpClip, "^""(.+)""$", $)) {
         ; unwrap double quote
