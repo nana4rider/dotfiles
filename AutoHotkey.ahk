@@ -6,8 +6,8 @@
 ; Win+Ctrl+Shift+Rで再読み込み
 #+^r::Reload
 
-#IfWinActive, ahk_exe A5M2.exe
 ; A5M2にて新規SQLをCtrl-Tで開く
+#IfWinActive, ahk_exe A5M2.exe
 ^t::
     Send, ^n
     Sleep 50
@@ -27,7 +27,7 @@ F19::Send, {F8}
 return
 #IfWinActive
 
-; A5M2にて新規SQLをCtrl-Tで開く
+; Slackのコードブロック
 #IfWinActive, ahk_exe Slack.exe
 F16::Send, ^!+c
 #IfWinActive
