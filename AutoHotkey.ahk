@@ -5,6 +5,8 @@
 #Space::return
 ; Win+Ctrl+Shift+Rで再読み込み
 #+^r::Reload
+; 仮想デスクトップ使わない
+#^d::return
 
 ; A5M2にて新規SQLをCtrl-Tで開く
 #IfWinActive, ahk_exe A5M2.exe
