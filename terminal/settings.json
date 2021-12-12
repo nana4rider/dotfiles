@@ -28,7 +28,8 @@
       // "useAcrylic": true,
       // "acrylicOpacity": 0.7,
       "colorScheme": "One Half Dark",
-      "cursorShape": "filledBox"
+      "cursorShape": "filledBox",
+      "bellStyle": "none"
     },
     "list": [
       // GUIDはPowerShellのNew-Guidコマンドで作成可能
