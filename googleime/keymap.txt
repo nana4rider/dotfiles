@@ -81,10 +81,10 @@ Conversion	Shift Down	ConvertNextPage
 Suggestion	Shift Enter	CommitFirstSuggestion
 Composition	Shift ESC	Cancel
 Conversion	Shift ESC	Cancel
-Composition	Ctrl '	IMEOff
-Conversion	Ctrl '	IMEOff
-Precomposition	Ctrl '	IMEOff
-DirectInput	Ctrl '	IMEOn
+Composition	F22	IMEOff
+Conversion	F22	IMEOff
+Precomposition	F22	IMEOff
+DirectInput	F23	IMEOn
 Conversion	Shift Tab	ConvertPrev
 Conversion	Shift Up	ConvertPrevPage
 Precomposition	Space	InsertSpace
