@@ -99,6 +99,7 @@ Composition	Ctrl j	Commit
 Conversion	Ctrl j	Commit
 Composition	Ctrl [	Cancel
 Conversion	Ctrl [	Cancel
+Conversion	Ctrl ;	IMEOff
 Composition	ASCII	InsertCharacter
 Composition	Kanji	IMEOff
 Composition	OFF	IMEOff
