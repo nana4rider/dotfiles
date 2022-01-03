@@ -66,7 +66,7 @@
       {
         "guid": "{0b72c3c9-059e-42dd-8f44-c0822c78e2e6}",
         "name": "Raspberry Pi Zero [玄関]",
-        "commandline": "ssh nana4rider@192.168.1.33 -o ServerAliveInterval=60",
+        "commandline": "ssh nana4rider@192.168.1.31 -o ServerAliveInterval=60",
         "icon": "%USERPROFILE%\\Documents\\repository\\others\\dotfiles\\terminal\\images\\icon\\raspberry-pi.ico",
         "backgroundImage": "%USERPROFILE%\\Documents\\repository\\others\\dotfiles\\terminal\\images\\background\\raspberry-pi.png",
         "backgroundImageStretchMode": "none",
