@@ -95,7 +95,7 @@ return
         if (RegExMatch(filePath, "^""(.+)""$", $)) {
             filePath := $1
         }
-
+        
         ; クリップボードの中身がURIの場合は関連付けで開く
         if (RegExMatch(filePath, "^\w+://")) {
             Run, "%ComSpec%" /c start %filePath%, , Hide
@@ -145,8 +145,11 @@ return
             filePath := $1
         }
         
-        ; WSLパスの場合はWindowsパスに変換する
-        if (RegExMatch(filePath, "^/")) {
+        if (RegExMatch(filePath, "^file:(.+)", $)) {
+            ; file://
+            filePath := RegExReplace($1, "/", "\")
+        } else if (RegExMatch(filePath, "^/")) {
+            ; WSLパスの場合はWindowsパスに変換する
             filePath := ToggleFilePath(filePath)
         }
         
@@ -177,7 +180,7 @@ return
 ^t::Send, {Tab}^t
 ^w::Send, {Tab}^w
 #if
-
+    
 ; クリップボードのWindowsとWLSのパスを相互変換
 ; パスにスペースが含まれる場合はダブルクォートで囲みます。
 #p::
