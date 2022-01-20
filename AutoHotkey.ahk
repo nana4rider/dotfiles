@@ -8,6 +8,11 @@
 ; 仮想デスクトップ使わない
 #^d::return
 
+; Ctrl+Alt+Wで定型文グループ2
+^!w::
+    Run, "%ComSpec%" /c start Clibor.exe /vt 2, , Hide
+return
+
 ; A5M2にて新規SQLをCtrl-Tで開く
 #IfWinActive, ahk_exe A5M2.exe
 ^t::
