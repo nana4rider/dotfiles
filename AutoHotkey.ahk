@@ -13,6 +13,15 @@
     Run, "%ComSpec%" /c start Clibor.exe /vt 2, , Hide
 return
 
+; ChromeでWebページにフォーカスを移動
+#IfWinActive, ahk_exe chrome.exe
+!d::
+    Send, {F10}
+    Sleep 50
+    Send, +{F6}
+return
+#IfWinActive
+
 ; A5M2にて新規SQLをCtrl-Tで開く
 #IfWinActive, ahk_exe A5M2.exe
 ^t::
