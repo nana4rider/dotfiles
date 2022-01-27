@@ -80,7 +80,7 @@ F16::Send, ^!+c
         }
         if (!exists[entry]) {
             exists[entry] := 1
-            clipString .= "'" . entry . "', "
+            clipString .= "'" . entry . "'" . Chr(44)
         }
     }
     if (clipString) {
