@@ -159,7 +159,7 @@ return
             filePath := $1
         }
         
-        if (RegExMatch(filePath, "^file:(.+)", $)) {
+        if (RegExMatch(filePath, "^file:(?:///)?(.+)", $)) {
             ; file://
             filePath := RegExReplace($1, "/", "\")
         } else if (RegExMatch(filePath, "^/")) {
