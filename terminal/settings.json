@@ -35,8 +35,8 @@
       // GUIDはPowerShellのNew-Guidコマンドで作成可能
       {
         "guid": "{ae988df8-e500-48c7-9267-630bfa8f7a4b}",
-        "name": "pwsh",
-        "commandline": "pwsh",
+        "name": "powershell",
+        "commandline": "powershell",
         "startingDirectory" : "%USERPROFILE%",
         "colorScheme": "Campbell",
         "icon": "%USERPROFILE%\\Documents\\repository\\others\\dotfiles\\terminal\\images\\icon\\powershell.ico",
@@ -45,10 +45,10 @@
         "backgroundImageAlignment": "bottomRight"
       },
       {
-        "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
+        "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
         "name": "bash",
-        "commandline": "wsl -d Ubuntu-20.04",
-        "startingDirectory" : "\\\\wsl$\\Ubuntu-20.04\\home\\nana4rider",
+        "source": "Windows.Terminal.Wsl",
+        "startingDirectory" : "\\\\wsl$\\Ubuntu\\home\\nana4rider",
         "icon": "%USERPROFILE%\\Documents\\repository\\others\\dotfiles\\terminal\\images\\icon\\ubuntu.ico",
         "backgroundImage": "%USERPROFILE%\\Documents\\repository\\others\\dotfiles\\terminal\\images\\background\\ubuntu.png",
         "backgroundImageStretchMode": "none",
@@ -100,7 +100,7 @@
         "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
         "name": "cmd.exe",
         "commandline": "cmd.exe",
-        "hidden": true
+        "hidden": false
       }
     ]
   },

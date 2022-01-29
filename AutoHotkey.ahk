@@ -223,7 +223,7 @@ return
 ToggleFilePath(filePath)
 {
     ; /mnt/[A-Z] 以外のWSLパスをUNCに変換する場合のディストリビューション名
-    distroName := "Ubuntu-20.04"
+    distroName := "Ubuntu"
     
     if (RegExMatch(filePath, "^/")) {
         ; unescape single/back quote
