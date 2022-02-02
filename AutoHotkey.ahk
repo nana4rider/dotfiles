@@ -190,9 +190,11 @@ return
 
 ; Tablacus Explorerにおいて、アドレスバーやツリービューにフォーカス時
 ; 一部ショートカットが効かない問題を解消する
-#if WinGetProcessName() = "TE64.exe" && (ControlGetFocus() = "SysTreeView321" || ControlGetFocus() = "Internet Explorer_Server1") ;
-^t::Send, {Tab}^t
-^w::Send, {Tab}^w
+#if WinGetProcessName() = "TE64.exe" && (ControlGetFocus() = "SysTreeView321" || ControlGetFocus() = "Chrome_WidgetWin_11") ;
+^t::Send, {Tab}{Down}^t
+^w::Send, {Tab}{Down}^w
+F13::Send, {Tab}{Down}{F13}
+F19::Send, {Tab}{Down}
 #if
     
 ; クリップボードのWindowsとWLSのパスを相互変換
