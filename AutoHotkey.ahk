@@ -112,7 +112,7 @@ return
         
         ; クリップボードの中身がURIの場合は関連付けで開く
         if (RegExMatch(filePath, "^\w+://")) {
-            Run, "%ComSpec%" /c start %filePath%, , Hide
+            RunWait, PowerShell.exe -Command start \"%filePath%\", , Hide
             openCount++
             continue
         }
