@@ -99,6 +99,11 @@
     "command": "editor.action.addSelectionToNextFindMatch",
     "when": "editorFocus"
   },
+  {
+    "key": "alt+k",
+    "command": "cursorUndo",
+    "when": "textInputFocus"
+  },
   // 行削除
   {
     "key": "ctrl+d",
