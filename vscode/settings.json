@@ -18,5 +18,8 @@
   "workbench.iconTheme": "material-icon-theme",
   "pasteImage.path": "${currentFileDir}/images",
   "terminal.external.windowsExec": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
-  "diffEditor.ignoreTrimWhitespace": false
+  "diffEditor.ignoreTrimWhitespace": false,
+  "[nginx]": {
+    "editor.defaultFormatter": "raynigon.nginx-formatter"
+  }
 }
