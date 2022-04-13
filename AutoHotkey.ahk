@@ -256,6 +256,66 @@ ToggleFilePath(filePath)
     return filePath
 }
 
+; 全ての文字列が半角の場合は日本語に、そうでない場合は英語に翻訳します
+F24::
+    tmpclip := clipboard
+    lang := getTranslateLanguage(tmpclip)
+    transText := executeTranslate(tmpclip, lang)
+    ; TrayTip, Translation is complete., %transText%
+    clipboard := transText
+    Send, ^v
+    clipboard := tmpclip
+return
+
+; ダイアログに指定した言語で翻訳します
++F24::
+    tmpclip := clipboard
+    lang := getTranslateLanguage(tmpclip)
+    InputBox, lang, Please specify the translation language, %tmpclip%, , , , , , , , %lang%
+    if (ErrorLevel <> 0) {
+        return
+    }
+    transText := executeTranslate(tmpclip, lang)
+    ; TrayTip, Translation is complete., %transText%
+    clipboard := transText
+    Send, ^v
+    clipboard := tmpclip
+return
+
+; 翻訳言語の判断
+getTranslateLanguage(text)
+{
+    if (RegExMatch(text, "^[\x21-\x7e\s]+$")) {
+        return "ja"
+    } else {
+        return "en"
+    }
+}
+
+; 翻訳実行
+executeTranslate(text, lang)
+{
+    ; translate-shell(https://github.com/soimort/translate-shell)をインストールしているディストリビューション名
+    ; sudo apt install translate-shell
+    distroName := "Ubuntu"
+    
+    srcFile := A_Temp . "\translate.src.txt"
+    srcFileWsl := ToggleFilePath(srcFile)
+    dstFile := A_Temp . "\translate.dst.txt"
+    
+    fh := FileOpen(srcFile, "w", "UTF-8-RAW")
+    fh.Write(text)
+    fh.Close()
+    RunWait, %ComSpec% /c wsl -d %distroName% trans :%lang% "file://%srcFileWsl%" > "%dstFile%", , Hide
+    
+    fh := FileOpen(dstFile, "r", "UTF-8-RAW")
+    content := fh.Read()
+    fh.Close()
+    content := RegExReplace(content, "\s+$", "")
+    
+    return content
+}
+
 WinGetClass(WinTitle = "A")
 {
     WinGetClass, OutputVar, %WinTitle%
