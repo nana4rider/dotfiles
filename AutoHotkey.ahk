@@ -261,10 +261,13 @@ F24::
     tmpclip := clipboard
     lang := getTranslateLanguage(tmpclip)
     transText := executeTranslate(tmpclip, lang)
-    ; TrayTip, Translation is complete., %transText%
-    clipboard := transText
+    if (RegExMatch(transText, "^https?://")) {
+        ; URLの場合はクリップボードに入れずに関連付けで開く
+        RunWait, PowerShell.exe -Command start \"%transText%\", , Hide
+    } else {
+        clipboard := transText
+    }
     Send, ^v
-    clipboard := tmpclip
 return
 
 ; ダイアログに指定した言語で翻訳します
@@ -273,19 +276,17 @@ return
     lang := getTranslateLanguage(tmpclip)
     InputBox, lang, Please specify the translation language, %tmpclip%, , , , , , , , %lang%
     if (ErrorLevel <> 0) {
-        return
-    }
-    transText := executeTranslate(tmpclip, lang)
-    ; TrayTip, Translation is complete., %transText%
-    clipboard := transText
-    Send, ^v
-    clipboard := tmpclip
+    return
+}
+transText := executeTranslate(tmpclip, lang)
+clipboard := transText
+Send, ^v
 return
 
 ; 翻訳言語の判断
 getTranslateLanguage(text)
 {
-    if (RegExMatch(text, "^[\x21-\x7e\s]+$")) {
+    if (RegExMatch(text, "^[\x21-\x7e\s]+$") || RegExMatch(text, "^https?://")) {
         return "ja"
     } else {
         return "en"
