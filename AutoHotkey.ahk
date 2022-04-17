@@ -266,8 +266,9 @@ F24::
         RunWait, PowerShell.exe -Command start \"%transText%\", , Hide
     } else {
         clipboard := transText
+        Sleep 100
+        Send, ^v
     }
-    Send, ^v
 return
 
 ; ダイアログに指定した言語で翻訳します
@@ -280,6 +281,7 @@ return
 }
 transText := executeTranslate(tmpclip, lang)
 clipboard := transText
+Sleep 100
 Send, ^v
 return
 
