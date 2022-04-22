@@ -22,15 +22,8 @@ return
 return
 #IfWinActive
 
-; A5M2にて新規SQLをCtrl-Tで開く
+; A5M2
 #IfWinActive, ahk_exe A5M2.exe
-^t::
-    Send, ^n
-    Sleep 50
-    Send, {Enter}
-    Sleep 1500
-    Send, {F8}
-return
 ; F13でツリーにフォーカス
 F13::Send, {F7}
 ; F19でエディタにフォーカス
@@ -276,13 +269,12 @@ return
     tmpclip := clipboard
     lang := getTranslateLanguage(tmpclip)
     InputBox, lang, Please specify the translation language, %tmpclip%, , , , , , , , %lang%
-    if (ErrorLevel <> 0) {
-    return
-}
-transText := executeTranslate(tmpclip, lang)
-clipboard := transText
-Sleep 100
-Send, ^v
+    if (ErrorLevel == 0) {
+        transText := executeTranslate(tmpclip, lang)
+        clipboard := transText
+        Sleep 100
+        Send, ^v
+    }
 return
 
 ; 翻訳言語の判断
