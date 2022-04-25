@@ -1,5 +1,6 @@
 #InstallKeybdHook
 #useHook On
+#include *i Work.ahk
 
 ; 日英切り替えを無効
 #Space::return
