@@ -116,6 +116,11 @@ return
             filePath := ToggleFilePath(filePath)
         }
         
+        ; ショートカットの場合は実体を開く
+        if (RegExMatch(filePath, ".lnk$")) {
+            FileGetShortcut, %filePath%, filePath
+        }
+
         fileAttr := FileExist(filePath)
         if (RegExMatch(fileAttr, "D")) {
             ; ディレクトリの場合はTablacus Explorerで開く
