@@ -311,6 +311,12 @@
     "command": "cursorColumnSelectPageUp",
     "when": "textInputFocus"
   },
+  // macros
+  {
+    "key": "ctrl+shift+m",
+    "command": "vscode-macros.run",
+    "when": "editorTextFocus"
+  },
   // デフォルトキーバインドの削除
   {
     "key": "ctrl+k ctrl+s",
