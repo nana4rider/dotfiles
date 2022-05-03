@@ -8,7 +8,6 @@
   "workbench.editor.enablePreview": false,
   "editor.renderControlCharacters": true,
   "editor.suggestSelection": "first",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "[css]": {
     "editor.defaultFormatter": "aeschli.vscode-css-formatter"
   },
