@@ -20,5 +20,6 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "[nginx]": {
     "editor.defaultFormatter": "raynigon.nginx-formatter"
-  }
+  },
+  "vscodemacros.macroFilePath": "{USERPROFILE}\\Documents\\repository\\others\\dotfiles\\vscode\\macros.js"
 }
