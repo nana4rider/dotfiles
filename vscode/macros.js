@@ -121,6 +121,9 @@ const json2String = (separator, wrapper = s => s) => {
         }
         newLines.push(Object.values(data).map(wrapper).join(separator));
       } catch (e) {
+        if (!header) {
+          throw e;
+        }
         newLines.push(`${e.message}: ${line}`);
       }
       return newLines;
@@ -135,16 +138,20 @@ function convSelection(...converter) {
   }
   const document = editor.document;
   const selection = editor.selection;
-  const text = document.getText(selection);
-  if (text.length === 0) {
-    return 'Please select a text';
+  let range;
+  let text = document.getText(selection);
+
+  if (text.length > 0) {
+    range = selection;
+  } else {
+    range = new vscode.Range(0, 0, document.lineCount + 1, 0);
+    text = document.getText();
   }
 
   editor.edit(editBuilder => {
     const nl = document.eol === 1 ? "\n" : "\r\n";
-    const newLines = converter.reduce(
-      (result, f) => f(result, nl), text.split(nl));
-    editBuilder.replace(selection, newLines.join(nl));
+    const newLines = converter.reduce((result, f) => f(result, nl), text.split(nl));
+    editBuilder.replace(range, newLines.join(nl));
   });
 }
 
