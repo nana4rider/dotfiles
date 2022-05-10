@@ -1,7 +1,7 @@
 const vscode = require('vscode');
 const macros = new Map();
 
-macros.set('List2Array', function () {
+macros.set('string -> \'string\',', () => {
   return convSelection(
     skipBlankLine,
     lines => lines.map(line => "'" + line.replace(/(?=')/g, '\\') + "',"),
@@ -9,7 +9,7 @@ macros.set('List2Array', function () {
   );
 });
 
-macros.set('Tsv2MdTable', function () {
+macros.set('TSV -> Markdown Table', () => {
   const tomd = ar => '|' + ar.join('|') + '|';
 
   return convSelection(
@@ -31,7 +31,7 @@ macros.set('Tsv2MdTable', function () {
   );
 });
 
-macros.set('UniqueSort', function () {
+macros.set('Unique and Sort', () => {
   return convSelection(
     skipBlankLine,
     uniqueLines,
@@ -39,7 +39,7 @@ macros.set('UniqueSort', function () {
   );
 });
 
-macros.set('Sql2SPHPString', function () {
+macros.set('SQL -> PHP string', () => {
   return convSelection(
     skipBlankLine,
     lines => {
@@ -62,16 +62,7 @@ macros.set('Sql2SPHPString', function () {
   );
 });
 
-macros.set('AddSlash', function () {
-  return convSelection(
-    lines => lines.map(line => {
-      if (line.match(/^\s*\w/)) line = '/' + line.trim();
-      return line;
-    })
-  );
-});
-
-macros.set('Json2Tsv', function () {
+macros.set('JSON List -> TSV', () => {
   return convSelection(
     skipBlankLine,
     json2String('\t'),
@@ -79,7 +70,7 @@ macros.set('Json2Tsv', function () {
   );
 });
 
-macros.set('Json2Csv', function () {
+macros.set('JSON List -> CSV', () => {
   return convSelection(
     skipBlankLine,
     json2String(',', s => '"' + String(s).replace(/(?=")/g, '"') + '"'),
@@ -87,12 +78,19 @@ macros.set('Json2Csv', function () {
   );
 });
 
-macros.set('List2SqlIn', function () {
+macros.set('String List -> SQL IN Clause', () => {
   return convSelection(
     skipBlankLine,
     uniqueLines,
     lines => lines.map(line => "'" + line.replace(/(?=')/g, "'") + "'"),
     toSingleLine(',', ' IN(', ')')
+  );
+});
+
+macros.set('Numbering', () => {
+  return convSelection(
+    skipBlankLine,
+    lines => lines.map((line, index) => (index + 1) + '\t' + line),
   );
 });
 
@@ -155,7 +153,7 @@ function convSelection(...converter) {
   });
 }
 
-module.exports.macroCommands = (function () {
+module.exports.macroCommands = (() => {
   let no = 1;
   const commands = {};
   for (const [name, func] of macros.entries()) {
