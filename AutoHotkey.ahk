@@ -43,7 +43,7 @@ F16::Send, ^!+c
 #IfWinActive
 
 ; like bash
-#if WinGetProcessName() = "WindowsTerminal.exe" && WinGetTitle() = "pwsh"
+#if WinGetProcessName() = "WindowsTerminal.exe" && InStr(WinGetTitle(), "PowerShell")
 ^a::Send, {Home}
 ^e::Send, {End}
 ^u::Send, ^{Home}
@@ -52,6 +52,21 @@ F16::Send, ^!+c
 ^b::Send, {Left}
 ^n::Send, {Down}
 ^p::Send, {Up}
+#If
+
+#if WinGetProcessName() = "WindowsTerminal.exe" && InStr(WinGetTitle(), "@")
+^+Left::
+    Send, {Esc}
+    Sleep 50
+    Send, ^]
+    Sleep 50
+    Send, {Space}
+return
+^+Right::
+    Send, ^]
+    Sleep 50
+    Send, {Space}
+return
 #If
 
 ; Win+Ctrl+i IN clause
