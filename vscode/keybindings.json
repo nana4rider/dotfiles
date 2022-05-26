@@ -317,6 +317,12 @@
     "command": "vscode-macros.run",
     "when": "editorTextFocus"
   },
+  // ソースアクション
+  {
+    "key": "shift+alt+s",
+    "command": "editor.action.sourceAction",
+    "when": "editorTextFocus"
+  },
   // デフォルトキーバインドの削除
   {
     "key": "ctrl+k ctrl+s",
