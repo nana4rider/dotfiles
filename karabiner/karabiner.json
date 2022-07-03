@@ -21,9 +21,9 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com\\.microsoft\\.rdc.*"
+                                            "^com\\.apple\\.Terminal$"
                                         ],
-                                        "type": "frontmost_application_unless"
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
@@ -164,9 +164,9 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com\\.microsoft\\.rdc.*"
+                                            "^com\\.apple\\.Terminal$"
                                         ],
-                                        "type": "frontmost_application_unless"
+                                        "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
