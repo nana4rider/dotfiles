@@ -20,8 +20,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "bundle_identifiers": [
-                                        ],
+                                        "bundle_identifiers": [],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
@@ -44,7 +43,8 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com\\.apple\\.Terminal$"
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -68,7 +68,8 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com\\.apple\\.Terminal$"
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -92,7 +93,8 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com\\.apple\\.Terminal$"
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -116,7 +118,8 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com\\.apple\\.Terminal$"
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -145,7 +148,8 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com\\.apple\\.Terminal$"
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -175,7 +179,8 @@
                                     {
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.rdc.*",
-                                            "^com\\.apple\\.Terminal$"
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -288,7 +293,8 @@
                                     {
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.rdc.*",
-                                            "^com\\.apple\\.Terminal$"
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -319,7 +325,8 @@
                                     {
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.rdc.*",
-                                            "^com\\.apple\\.Terminal$"
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -331,7 +338,7 @@
                                             "left_command"
                                         ],
                                         "optional": [
-                                            "any"
+                                            "left_shift"
                                         ]
                                     }
                                 },
@@ -350,7 +357,8 @@
                                     {
                                         "bundle_identifiers": [
                                             "^com\\.microsoft\\.rdc.*",
-                                            "^com\\.apple\\.Terminal$"
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -362,7 +370,7 @@
                                             "left_command"
                                         ],
                                         "optional": [
-                                            "any"
+                                            "left_shift"
                                         ]
                                     }
                                 },
@@ -371,6 +379,62 @@
                                         "key_code": "right_arrow",
                                         "modifiers": [
                                             "left_option"
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "left_arrow",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "a",
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "right_arrow",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "e",
+                                        "modifiers": [
+                                            "left_control"
                                         ]
                                     }
                                 ]
@@ -390,9 +454,6 @@
                                     "modifiers": {
                                         "mandatory": [
                                             "left_control"
-                                        ],
-                                        "optional": [
-                                            "any"
                                         ]
                                     }
                                 },
@@ -420,9 +481,6 @@
                                     "modifiers": {
                                         "mandatory": [
                                             "left_control"
-                                        ],
-                                        "optional": [
-                                            "any"
                                         ]
                                     }
                                 },
