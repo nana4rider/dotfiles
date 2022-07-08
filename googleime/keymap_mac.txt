@@ -95,8 +95,8 @@ Composition	Ctrl j	Commit
 Conversion	Ctrl j	Commit
 Composition	Ctrl [	Cancel
 Conversion	Ctrl [	Cancel
-Conversion	Ctrl ;	IMEOff
-Composition	Ctrl ;	IMEOff
+Composition	Ctrl Shift Option j	Commit
+Conversion	Ctrl Shift Option j	Commit
 Composition	ASCII	InsertCharacter
 Composition	Kanji	IMEOff
 Composition	OFF	IMEOff

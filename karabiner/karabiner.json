@@ -186,6 +186,41 @@
                                         ]
                                     }
                                 ]
+                            },
+                            {
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc.*"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    },
+                                    {
+                                        "type": "input_source_if",
+                                        "input_sources": [
+                                            {
+                                                "language": "^ja$"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "japanese_eisuu"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "j",
+                                        "modifiers": [
+                                            "control",
+                                            "option",
+                                            "shift"
+                                        ]
+                                    },
+                                    {
+                                        "key_code": "japanese_eisuu"
+                                    }
+                                ]
                             }
                         ]
                     }
