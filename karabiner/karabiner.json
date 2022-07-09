@@ -138,6 +138,8 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
                                             "^com\\.microsoft\\.rdc.*"
                                         ],
                                         "type": "frontmost_application_unless"
@@ -165,6 +167,8 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
                                             "^com\\.microsoft\\.rdc.*"
                                         ],
                                         "type": "frontmost_application_unless"
@@ -207,6 +211,46 @@
                                 ],
                                 "from": {
                                     "key_code": "japanese_eisuu"
+                                },
+                                "to": [
+                                {
+                                        "key_code": "j",
+                                        "modifiers": [
+                                            "control",
+                                            "option",
+                                            "shift"
+                                        ]
+                                    },
+                                    {
+                                        "key_code": "japanese_eisuu"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc.*"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    },
+                                    {
+                                        "type": "input_source_if",
+                                        "input_sources": [
+                                            {
+                                                "language": "^ja$"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "semicolon",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
