@@ -1,0 +1,314 @@
+[
+  // キーバインドの設定
+  {
+    "key": "shift+cmd+,",
+    "command": "workbench.action.openGlobalKeybindingsFile"
+  },
+  // 設定
+  {
+    "key": "cmd+oem_comma",
+    "command": "workbench.action.openSettingsJson"
+  },
+  // 新規ターミナル
+  {
+    "key": "cmd+=",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalProcessSupported"
+  },
+  // ターミナルに移動
+  {
+    "key": "cmd+-",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  // 新規ターミナル
+  {
+    "key": "cmd+shift+-",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalProcessSupported"
+  },
+  // 新しいファイル
+  {
+    "key": "cmd+t",
+    "command": "workbench.action.files.newUntitledFile"
+  },
+  // シンボル検索
+  {
+    "key": "cmd+n",
+    "command": "workbench.action.showAllSymbols"
+  },
+  // 大文字
+  {
+    "key": "cmd+k cmd+u",
+    "command": "extension.changeCase.upper",
+    "when": "editorTextFocus"
+  },
+  // 小文字
+  {
+    "key": "cmd+k cmd+l",
+    "command": "extension.changeCase.lower",
+    "when": "editorTextFocus"
+  },
+  // キャメルケース
+  {
+    "key": "cmd+k cmd+k",
+    "command": "extension.changeCase.pascal",
+    "when": "editorTextFocus"
+  },
+  // スネークケース
+  {
+    "key": "cmd+k cmd+s",
+    "command": "extension.changeCase.snake",
+    "when": "editorTextFocus"
+  },
+  // 置換
+  {
+    "key": "shift+cmd+f",
+    "command": "editor.action.startFindReplaceAction",
+    "when": "editorFocus || editorIsOpen"
+  },
+  {
+    "key": "alt+f14",
+    "command": "workbench.action.replaceInFiles"
+  },
+  // 全て置換
+  {
+    "key": "ctrl+a",
+    "command": "editor.action.replaceAll",
+    "when": "editorFocus && findWidgetVisible"
+  },
+  {
+    "key": "ctrl+a",
+    "command": "search.action.replaceAll",
+    "when": "replaceActive && searchViewletVisible && !findWidgetVisible"
+  },
+  // 改行
+  {
+    "key": "shift+enter",
+    "command": "editor.action.insertLineAfter",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  // 次のマッチを選択に追加
+  {
+    "key": "ctrl+j",
+    "command": "editor.action.addSelectionToNextFindMatch",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "cursorUndo",
+    "when": "textInputFocus"
+  },
+  // 行削除
+  {
+    "key": "cmd+d",
+    "command": "editor.action.deleteLines",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  // 次のタブに移動
+  {
+    "key": "ctrl+tab",
+    "command": "workbench.action.nextEditor"
+  },
+  // 前のタブに移動
+  {
+    "key": "shift+ctrl+tab",
+    "command": "workbench.action.previousEditor"
+  },
+  // 正規表現を使用する
+  {
+    "key": "ctrl+r",
+    "command": "toggleFindRegex",
+    "when": "editorFocus && findWidgetVisible"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "workbench.action.terminal.toggleFindRegex",
+    "when": "terminalFindFocused && terminalProcessSupported || terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "toggleSearchEditorRegex",
+    "when": "inSearchEditor && searchInputBoxFocus"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "toggleSearchRegex",
+    "when": "searchViewletFocus"
+  },
+  // DIFF
+  {
+    "key": "alt+down",
+    "command": "workbench.action.compareEditor.nextChange",
+    "when": "textCompareEditorVisible"
+  },
+  {
+    "key": "alt+up",
+    "command": "workbench.action.compareEditor.previousChange",
+    "when": "textCompareEditorVisible"
+  },
+  // エディタにフォーカス
+  // 1番目
+  {
+    "key": "f19",
+    "command": "workbench.action.focusFirstEditorGroup"
+  },
+  // 2番目
+  {
+    "key": "f18",
+    "command": "workbench.action.focusSecondEditorGroup"
+  },
+  // 左メニュー
+  {
+    "key": "f13",
+    "command": "workbench.view.explorer",
+    "when": "viewContainer.workbench.view.explorer.enabled"
+  },
+  {
+    "key": "f13",
+    "command": "workbench.action.quickOpenNavigatePreviousInFilePicker",
+    "when": "inFilesPicker && inQuickOpen"
+  },
+  {
+    "key": "f14",
+    "command": "workbench.action.findInFiles"
+  },
+  {
+    "key": "alt+f14",
+    "command": "workbench.action.replaceInFiles"
+  },
+  {
+    "key": "f15",
+    "command": "workbench.view.scm",
+    "when": "workbench.scm.active"
+  },
+  {
+    "key": "f16",
+    "command": "workbench.view.debug",
+    "when": "viewContainer.workbench.view.debug.enabled"
+  },
+  {
+    "key": "f17",
+    "command": "workbench.view.extensions",
+    "when": "viewContainer.workbench.view.extensions.enabled"
+  },
+  // シンボル移動
+  {
+    "key": "cmd+o",
+    "command": "workbench.action.gotoSymbol"
+  },
+  // ファイルを開く
+  {
+    "key": "shift+cmd+o",
+    "command": "workbench.action.files.openFile",
+    "when": "true"
+  },
+  {
+    "key": "shift+cmd+o",
+    "command": "workbench.action.files.openLocalFile",
+    "when": "remoteFileDialogVisible"
+  },
+  // 参照を開く
+  {
+    "key": "cmd+ctrl+h",
+    "command": "editor.action.goToReferences",
+    "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+  },
+  // 定義を開く
+  {
+    "key": "cmd+b",
+    "command": "editor.action.revealDefinition",
+    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+  },
+  // スマート選択
+  {
+    "key": "ctrl+p",
+    "command": "editor.action.smartSelect.shrink",
+    "when": "editorTextFocus && !textCompareEditorVisible"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "editor.action.smartSelect.expand",
+    "when": "editorTextFocus && !textCompareEditorVisible"
+  },
+  // 矩形選択
+  {
+    "key": "shift+alt+h",
+    "command": "cursorColumnSelectLeft",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "shift+alt+j",
+    "command": "cursorColumnSelectDown",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "shift+alt+k",
+    "command": "cursorColumnSelectUp",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "shift+alt+l",
+    "command": "cursorColumnSelectRight",
+    "when": "textInputFocus"
+  },
+  // macros
+  {
+    "key": "shift+cmd+m",
+    "command": "vscode-macros.run",
+    "when": "editorTextFocus"
+  },
+  // ソースアクション
+  {
+    "key": "shift+ctrl+s",
+    "command": "editor.action.sourceAction",
+    "when": "editorTextFocus"
+  },
+  // 移動
+  {
+    "key": "cmd+[",
+    "command": "workbench.action.navigateBack",
+    "when": "canNavigateBack"
+  },
+  {
+    "key": "cmd+]",
+    "command": "workbench.action.navigateLast"
+  },
+  // エクスプローラ
+  {
+    "key": "enter",
+    "command": "explorer.openAndPassFocus",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsFolder && !inputFocus"
+  },
+  // キーバインド削除
+  {
+    "key": "cmd+[",
+    "command": "-editor.action.outdentLines",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+-",
+    "command": "-workbench.action.navigateBack",
+    "when": "canNavigateBack"
+  },
+  {
+    "key": "cmd+]",
+    "command": "-editor.action.indentLines",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+down",
+    "command": "-explorer.openAndPassFocus",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsFolder && !inputFocus"
+  },
+  {
+    "key": "f2",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "enter",
+    "command": "-renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  }
+]

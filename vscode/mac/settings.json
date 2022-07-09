@@ -1,0 +1,15 @@
+{
+  "typescript.suggest.autoImports": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "window.openFilesInNewWindow": "off",
+  "security.workspace.trust.untrustedFiles": "open",
+  "explorer.autoReveal": true,
+  "workbench.editor.enablePreview": false,
+  "editor.renderControlCharacters": true,
+  "editor.suggestSelection": "first",
+  "[ts]": {
+    "editor.tabSize": 2
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "vscodemacros.macroFilePath": "{HOME}/develop/dotfiles/vscode/macros.js"
+}
