@@ -21,5 +21,7 @@
   "[nginx]": {
     "editor.defaultFormatter": "raynigon.nginx-formatter"
   },
-  "vscodemacros.macroFilePath": "{USERPROFILE}\\Documents\\repository\\others\\dotfiles\\vscode\\macros.js"
+  "vscodemacros.macroFilePath": "{USERPROFILE}\\Documents\\repository\\others\\dotfiles\\vscode\\macros.js",
+  "git.autofetch": true,
+  "git.confirmSync": false
 }
