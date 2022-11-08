@@ -23,5 +23,21 @@
   },
   "vscodemacros.macroFilePath": "{USERPROFILE}\\Documents\\repository\\others\\dotfiles\\vscode\\macros.js",
   "git.autofetch": true,
-  "git.confirmSync": false
+  "git.confirmSync": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "pandoc.htmlOptString": "-s -t html5",
+  "npm.keybindingsChangedWarningShown": true,
+  "git.enableSmartCommit": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

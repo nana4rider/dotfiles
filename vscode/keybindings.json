@@ -205,24 +205,9 @@
   },
   // 下メニュー
   {
-    "key": "shift+f13",
-    "command": "workbench.actions.view.problems",
-    "when": "workbench.panel.markers.view.active"
-  },
-  {
-    "key": "shift+f14",
-    "command": "workbench.action.output.toggleOutput",
-    "when": "workbench.panel.output.active"
-  },
-  {
-    "key": "shift+f15",
+    "key": "shift+f19",
     "command": "workbench.action.terminal.toggleTerminal",
     "when": "terminal.active"
-  },
-  {
-    "key": "shift+f16",
-    "command": "workbench.debug.action.toggleRepl",
-    "when": "workbench.panel.repl.view.active"
   },
   // 新規ターミナル
   {
@@ -599,5 +584,10 @@
   {
     "key": "ctrl+b",
     "command": "-workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "alt+space",
+    "command": "-workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && terminalShellIntegrationEnabled && !accessibilityModeEnabled && terminalShellType == 'pwsh'"
   }
 ]
