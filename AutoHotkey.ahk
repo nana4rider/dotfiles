@@ -25,8 +25,8 @@ return
 
 ; A5M2
 #IfWinActive, ahk_exe A5M2.exe
-; F13でツリーにフォーカス
-F13::Send, {F7}
+; F18でツリーにフォーカス
+F18::Send, {F7}
 ; F19でエディタにフォーカス
 F19::Send, {F8}
 ^s::Send, ^+r
