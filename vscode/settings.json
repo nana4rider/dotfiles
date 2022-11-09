@@ -39,5 +39,49 @@
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  // VSCodeVim
+  "vim.useSystemClipboard": true,
+  "vim.autoSwitchInputMethod.enable": true,
+  "vim.autoSwitchInputMethod.defaultIM": "0",
+  "vim.autoSwitchInputMethod.obtainIMCmd": "C:\\app\\bin\\zenhan.exe",
+  "vim.autoSwitchInputMethod.switchIMCmd": "C:\\app\\bin\\zenhan.exe {im}",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["/"],
+      "commands": ["actions.find"]
+    },
+    {
+      "before": ["?"],
+      "commands": ["editor.action.startFindReplaceAction"]
+    },
+    {
+      "before": ["u"],
+      "commands": ["undo"]
+    },
+    {
+      "before": ["<C-r>"],
+      "commands": ["redo"]
+    },
+    {
+      "before": ["x"],
+      "after": ["\"", "_", "x"]
+    },
+    {
+      "before": ["s"],
+      "after": ["\"", "_", "s"]
+    },
+    {
+      "before": ["f"],
+      "after": ["leader", "leader", "s"]
+    }
+  ],
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-n>": false,
+    "<C-c>": false,
+    "<C-x>": false,
+    "<c-k>": false
+  },
+  "vim.easymotion": true
 }

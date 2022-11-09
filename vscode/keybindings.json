@@ -12,24 +12,12 @@
   // 新しいファイル
   {
     "key": "ctrl+t",
-    "command": "workbench.action.files.newUntitledFile"
+    "command": "workbenc.action.files.newUntitledFile"
   },
   // シンボル検索
   {
     "key": "ctrl+n",
     "command": "workbench.action.showAllSymbols"
-  },
-  // 大文字
-  {
-    "key": "ctrl+k ctrl+u",
-    "command": "extension.changeCase.upper",
-    "when": "editorTextFocus"
-  },
-  // 小文字
-  {
-    "key": "ctrl+k ctrl+l",
-    "command": "extension.changeCase.lower",
-    "when": "editorTextFocus"
   },
   // キャメルケース
   {
@@ -57,12 +45,7 @@
   },
   // 置換
   {
-    "key": "ctrl+shift+f",
-    "command": "editor.action.startFindReplaceAction",
-    "when": "editorFocus || editorIsOpen"
-  },
-  {
-    "key": "alt+f14",
+    "key": "shift+alt+oem_2",
     "command": "workbench.action.replaceInFiles"
   },
   // 全て置換
@@ -75,17 +58,6 @@
     "key": "alt+a",
     "command": "search.action.replaceAll",
     "when": "replaceActive && searchViewletVisible && !findWidgetVisible"
-  },
-  // コメント
-  {
-    "key": "ctrl+/",
-    "command": "editor.action.addCommentLine",
-    "when": "editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "ctrl+shift+/",
-    "command": "editor.action.removeCommentLine",
-    "when": "editorTextFocus && !editorReadonly"
   },
   // 改行
   {
@@ -103,12 +75,6 @@
     "key": "alt+k",
     "command": "cursorUndo",
     "when": "textInputFocus"
-  },
-  // 行削除
-  {
-    "key": "ctrl+d",
-    "command": "editor.action.deleteLines",
-    "when": "editorTextFocus && !editorReadonly"
   },
   // 次のタブに移動
   {
@@ -141,12 +107,6 @@
     "command": "toggleSearchRegex",
     "when": "searchViewletFocus"
   },
-  // 選択ワードの全マッチを選択
-  {
-    "key": "alt+shift+r",
-    "command": "editor.action.changeAll",
-    "when": "editorTextFocus && !editorReadonly"
-  },
   // DIFF
   {
     "key": "alt+down",
@@ -159,53 +119,28 @@
     "when": "textCompareEditorVisible"
   },
   // エディタにフォーカス
-  // 1番目
   {
     "key": "f19",
     "command": "workbench.action.focusFirstEditorGroup"
   },
-  // 2番目
+  // エクスプローラ
   {
     "key": "f18",
-    "command": "workbench.action.focusSecondEditorGroup"
-  },
-  // 左メニュー
-  {
-    "key": "f13",
     "command": "workbench.view.explorer",
     "when": "viewContainer.workbench.view.explorer.enabled"
   },
   {
-    "key": "f13",
+    "key": "f18",
     "command": "workbench.action.quickOpenNavigatePreviousInFilePicker",
     "when": "inFilesPicker && inQuickOpen"
   },
   {
-    "key": "alt+f13",
-    "command": "workbench.action.toggleSidebarVisibility"
-  },
-  {
-    "key": "f14",
+    "key": "alt+oem_2",
     "command": "workbench.action.findInFiles"
   },
+  // ターミナルにフォーカス
   {
-    "key": "f15",
-    "command": "workbench.view.scm",
-    "when": "workbench.scm.active"
-  },
-  {
-    "key": "f16",
-    "command": "workbench.view.debug",
-    "when": "viewContainer.workbench.view.debug.enabled"
-  },
-  {
-    "key": "f17",
-    "command": "workbench.view.extensions",
-    "when": "viewContainer.workbench.view.extensions.enabled"
-  },
-  // 下メニュー
-  {
-    "key": "shift+f19",
+    "key": "f13",
     "command": "workbench.action.terminal.toggleTerminal",
     "when": "terminal.active"
   },
@@ -239,13 +174,8 @@
   },
   // 定義を開く
   {
-    "key": "ctrl+b",
+    "key": "alt+b",
     "command": "editor.action.revealDefinition",
-    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
-  },
-  {
-    "key": "ctrl+k ctrl+b",
-    "command": "editor.action.revealDefinitionAside",
     "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
   },
   // .todo
@@ -264,37 +194,6 @@
     "key": "alt+down",
     "command": "editor.action.smartSelect.expand",
     "when": "editorTextFocus && !textCompareEditorVisible"
-  },
-  // 矩形選択
-  {
-    "key": "shift+alt+h",
-    "command": "cursorColumnSelectLeft",
-    "when": "textInputFocus"
-  },
-  {
-    "key": "shift+alt+j",
-    "command": "cursorColumnSelectDown",
-    "when": "textInputFocus"
-  },
-  {
-    "key": "shift+alt+k",
-    "command": "cursorColumnSelectUp",
-    "when": "textInputFocus"
-  },
-  {
-    "key": "shift+alt+l",
-    "command": "cursorColumnSelectRight",
-    "when": "textInputFocus"
-  },
-  {
-    "key": "shift+alt+n",
-    "command": "cursorColumnSelectPageDown",
-    "when": "textInputFocus"
-  },
-  {
-    "key": "shift+alt+p",
-    "command": "cursorColumnSelectPageUp",
-    "when": "textInputFocus"
   },
   // macros
   {
@@ -362,11 +261,6 @@
     "key": "alt+up",
     "command": "-editor.action.moveLinesUpAction",
     "when": "editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "ctrl+h",
-    "command": "-editor.action.startFindReplaceAction",
-    "when": "editorFocus || editorIsOpen"
   },
   {
     "key": "ctrl+shift+h",
@@ -463,21 +357,6 @@
   {
     "key": "ctrl+shift+f",
     "command": "-workbench.action.findInFiles"
-  },
-  {
-    "key": "ctrl+shift+g",
-    "command": "-workbench.view.scm",
-    "when": "workbench.scm.active"
-  },
-  {
-    "key": "ctrl+shift+d",
-    "command": "-workbench.view.debug",
-    "when": "viewContainer.workbench.view.debug.enabled"
-  },
-  {
-    "key": "ctrl+shift+x",
-    "command": "-workbench.view.extensions",
-    "when": "viewContainer.workbench.view.extensions.enabled"
   },
   {
     "key": "ctrl+shift+m",
@@ -589,5 +468,29 @@
     "key": "alt+space",
     "command": "-workbench.action.terminal.sendSequence",
     "when": "terminalFocus && terminalShellIntegrationEnabled && !accessibilityModeEnabled && terminalShellType == 'pwsh'"
+  },
+  // VSCodeVim
+  {
+    "key": "alt+v",
+    "command": "extension.vim_ctrl+v",
+    "when": "editorTextFocus && vim.active && vim.use<C-v> && !inDebugRepl"
+  },
+  {
+    "key": "ctrl+v",
+    "command": "-extension.vim_ctrl+v",
+    "when": "editorTextFocus && vim.active && vim.use<C-v> && !inDebugRepl"
+  },
+  {
+    "key": "alt+b",
+    "command": "-java.run",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+q",
+    "command": "workbench.action.closeActiveEditor"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.closeActiveEditor"
   }
 ]
