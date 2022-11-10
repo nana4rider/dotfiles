@@ -46,6 +46,12 @@
   "vim.autoSwitchInputMethod.defaultIM": "0",
   "vim.autoSwitchInputMethod.obtainIMCmd": "C:\\app\\bin\\zenhan.exe",
   "vim.autoSwitchInputMethod.switchIMCmd": "C:\\app\\bin\\zenhan.exe {im}",
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["s"],
+      "after": ["leader", "leader", "2", "s"]
+    }
+  ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["/"],
@@ -68,12 +74,12 @@
       "after": ["\"", "_", "x"]
     },
     {
-      "before": ["s"],
+      "before": ["c", "l"],
       "after": ["\"", "_", "s"]
     },
     {
-      "before": ["f"],
-      "after": ["leader", "leader", "s"]
+      "before": ["s"],
+      "after": ["leader", "leader", "2", "s"]
     }
   ],
   "vim.handleKeys": {
