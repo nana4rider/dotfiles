@@ -83,7 +83,9 @@
             "bellStyle": "none",
             "colorScheme": "One Half Dark",
             "cursorShape": "filledBox",
-            "hidden": false
+            "hidden": false,
+            "opacity": 80,
+            "useAcrylic": true
         },
         "list": 
         [

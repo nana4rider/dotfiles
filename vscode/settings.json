@@ -52,6 +52,16 @@
       "after": ["leader", "leader", "2", "s"]
     }
   ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["/"],
+      "commands": ["actions.find"]
+    },
+    {
+      "before": ["?"],
+      "commands": ["editor.action.startFindReplaceAction"]
+    }
+  ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["/"],
