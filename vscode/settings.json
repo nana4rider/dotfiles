@@ -4,7 +4,7 @@
   "window.openFilesInNewWindow": "off",
   "security.workspace.trust.untrustedFiles": "open",
   "explorer.autoReveal": true,
-  "editor.lineNumbers": "on",
+  "editor.lineNumbers": "relative",
   "workbench.editor.enablePreview": false,
   "editor.renderControlCharacters": true,
   "editor.suggestSelection": "first",
@@ -74,19 +74,21 @@
       "after": ["\"", "_", "x"]
     },
     {
-      "before": ["c", "l"],
+      "before": ["s"],
       "after": ["\"", "_", "s"]
     },
     {
-      "before": ["s"],
+      "before": ["f"],
       "after": ["leader", "leader", "2", "s"]
+    },
+    {
+      "before": ["F"],
+      "after": ["v", "leader", "leader", "2", "s"]
     }
   ],
   "vim.handleKeys": {
-    "<C-a>": false,
     "<C-n>": false,
     "<C-c>": false,
-    "<C-x>": false,
     "<c-k>": false
   },
   "vim.easymotion": true
