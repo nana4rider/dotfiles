@@ -32,7 +32,7 @@
             {
                 "action": "closeTab"
             },
-            "keys": "ctrl+shift+d"
+            "keys": "alt+q"
         },
         {
             "command": 
