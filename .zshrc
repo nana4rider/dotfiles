@@ -23,8 +23,10 @@ bindkey '^r' peco-select-history
 
 function peco-open-code() {
   local dir=$(ls ~/repository | peco --query "$LBUFFER")
-  BUFFER="code ~/repository/${dir}"
-  zle accept-line
+  if [ -n "${dir}" ]; then
+    BUFFER="code ~/repository/${dir}"
+    zle accept-line
+  fi
   zle clear-screen
 }
 zle -N peco-open-code
