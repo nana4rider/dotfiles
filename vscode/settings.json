@@ -79,11 +79,11 @@
     },
     {
       "before": ["f"],
-      "after": ["leader", "leader", "2", "s"]
+      "after": ["leader", "leader", "s"]
     },
     {
       "before": ["F"],
-      "after": ["v", "leader", "leader", "2", "s"]
+      "after": ["v", "leader", "leader", "s"]
     }
   ],
   "vim.handleKeys": {

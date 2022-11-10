@@ -12,8 +12,8 @@
   // 新しいファイル
   {
     "key": "ctrl+t",
-    "command": "workbenc.action.files.newUntitledFile"
-  },
+    "command": "workbench.action.files.newUntitledFile"
+  }
   // シンボル検索
   {
     "key": "ctrl+n",
