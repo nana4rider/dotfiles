@@ -101,5 +101,6 @@
     "<C-c>": false,
     "<c-k>": false
   },
-  "vim.easymotion": true
+  "vim.easymotion": true,
+  "window.commandCenter": true
 }
