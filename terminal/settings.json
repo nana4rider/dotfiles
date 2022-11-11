@@ -90,72 +90,72 @@
         "list": 
         [
             {
-                "backgroundImage": "%USERPROFILE%\\Documents\\repository_wsl\\dotfiles\\terminal\\images\\background\\powershell.png",
+                "backgroundImage": "%USERPROFILE%\\Documents\\repository\\dotfiles\\terminal\\images\\background\\powershell.png",
                 "backgroundImageAlignment": "bottomRight",
                 "backgroundImageStretchMode": "none",
                 "colorScheme": "Campbell",
                 "commandline": "powershell",
                 "guid": "{ae988df8-e500-48c7-9267-630bfa8f7a4b}",
                 "hidden": true,
-                "icon": "%USERPROFILE%\\Documents\\repository_wsl\\dotfiles\\terminal\\images\\icon\\powershell.ico",
+                "icon": "%USERPROFILE%\\Documents\\repository\\dotfiles\\terminal\\images\\icon\\powershell.ico",
                 "name": "PowerShell5",
                 "startingDirectory": "%USERPROFILE%"
             },
             {
-                "backgroundImage": "%USERPROFILE%\\Documents\\repository_wsl\\dotfiles\\terminal\\images\\background\\ubuntu.png",
+                "backgroundImage": "%USERPROFILE%\\Documents\\repository\\dotfiles\\terminal\\images\\background\\ubuntu.png",
                 "backgroundImageAlignment": "bottomRight",
                 "backgroundImageStretchMode": "none",
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
                 "hidden": false,
-                "icon": "%USERPROFILE%\\Documents\\repository_wsl\\dotfiles\\terminal\\images\\icon\\ubuntu.ico",
+                "icon": "%USERPROFILE%\\Documents\\repository\\dotfiles\\terminal\\images\\icon\\ubuntu.ico",
                 "name": "zsh",
                 "source": "Windows.Terminal.Wsl",
                 "startingDirectory": "\\\\wsl$\\Ubuntu\\home\\nana4rider"
             },
             {
-                "backgroundImage": "%USERPROFILE%\\Documents\\repository_wsl\\dotfiles\\terminal\\images\\background\\powershell.png",
+                "backgroundImage": "%USERPROFILE%\\Documents\\repository\\dotfiles\\terminal\\images\\background\\powershell.png",
                 "backgroundImageAlignment": "bottomRight",
                 "backgroundImageStretchMode": "none",
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
-                "icon": "%USERPROFILE%\\Documents\\repository_wsl\\dotfiles\\terminal\\images\\icon\\powershell.ico",
+                "icon": "%USERPROFILE%\\Documents\\repository\\dotfiles\\terminal\\images\\icon\\powershell.ico",
                 "name": "PowerShell",
                 "source": "Windows.Terminal.PowershellCore"
             },
             {
-                "backgroundImage": "%USERPROFILE%\\Documents\\repository_wsl\\dotfiles\\terminal\\images\\background\\raspberry-pi.png",
+                "backgroundImage": "%USERPROFILE%\\Documents\\repository\\dotfiles\\terminal\\images\\background\\raspberry-pi.png",
                 "backgroundImageAlignment": "bottomRight",
                 "backgroundImageStretchMode": "none",
                 "commandline": "ssh nana4rider@192.168.1.30 -o ServerAliveInterval=60",
                 "guid": "{6db862ec-c3b8-4921-997c-2d4dcff5bf30}",
-                "icon": "%USERPROFILE%\\Documents\\repository_wsl\\dotfiles\\terminal\\images\\icon\\raspberry-pi.ico",
+                "icon": "%USERPROFILE%\\Documents\\repository\\dotfiles\\terminal\\images\\icon\\raspberry-pi.ico",
                 "name": "Raspberry Pi 4 [\u5bdd\u5ba4]"
             },
             {
-                "backgroundImage": "%USERPROFILE%\\Documents\\repository_wsl\\dotfiles\\terminal\\images\\background\\raspberry-pi.png",
+                "backgroundImage": "%USERPROFILE%\\Documents\\repository\\dotfiles\\terminal\\images\\background\\raspberry-pi.png",
                 "backgroundImageAlignment": "bottomRight",
                 "backgroundImageStretchMode": "none",
                 "commandline": "ssh nana4rider@192.168.1.31 -o ServerAliveInterval=60",
                 "guid": "{0b72c3c9-059e-42dd-8f44-c0822c78e2e6}",
-                "icon": "%USERPROFILE%\\Documents\\repository_wsl\\dotfiles\\terminal\\images\\icon\\raspberry-pi.ico",
+                "icon": "%USERPROFILE%\\Documents\\repository\\dotfiles\\terminal\\images\\icon\\raspberry-pi.ico",
                 "name": "Raspberry Pi Zero [\u7384\u95a2]"
             },
             {
-                "backgroundImage": "%USERPROFILE%\\Documents\\repository_wsl\\dotfiles\\terminal\\images\\background\\raspberry-pi.png",
+                "backgroundImage": "%USERPROFILE%\\Documents\\repository\\dotfiles\\terminal\\images\\background\\raspberry-pi.png",
                 "backgroundImageAlignment": "bottomRight",
                 "backgroundImageStretchMode": "none",
                 "commandline": "ssh nana4rider@192.168.1.32 -o ServerAliveInterval=60",
                 "guid": "{210567c9-3a86-4969-b9b4-d0c316bffc78}",
-                "icon": "%USERPROFILE%\\Documents\\repository_wsl\\dotfiles\\terminal\\images\\icon\\raspberry-pi.ico",
+                "icon": "%USERPROFILE%\\Documents\\repository\\dotfiles\\terminal\\images\\icon\\raspberry-pi.ico",
                 "name": "Raspberry Pi Zero [\u52dd\u624b\u53e3]"
             },
             {
-                "backgroundImage": "%USERPROFILE%\\Documents\\repository_wsl\\dotfiles\\terminal\\images\\background\\node.png",
+                "backgroundImage": "%USERPROFILE%\\Documents\\repository\\dotfiles\\terminal\\images\\background\\node.png",
                 "backgroundImageAlignment": "bottomRight",
                 "backgroundImageStretchMode": "none",
                 "commandline": "wsl -e /home/nana4rider/bin/node",
                 "guid": "{39ae8e83-36c7-4dcf-81a2-d41dd2e9af36}",
-                "icon": "%USERPROFILE%\\Documents\\repository_wsl\\dotfiles\\terminal\\images\\icon\\node.ico",
+                "icon": "%USERPROFILE%\\Documents\\repository\\dotfiles\\terminal\\images\\icon\\node.ico",
                 "name": "node"
             },
             {
