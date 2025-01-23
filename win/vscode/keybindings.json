@@ -15,6 +15,12 @@
     "key": "ctrl+t",
     "command": "workbench.action.files.newUntitledFile"
   },
+  // 置換
+  {
+    "key": "ctrl+shift+f",
+    "command": "editor.action.startFindReplaceAction",
+    "when": "editorFocus || editorIsOpen"
+  },
   // シンボル検索を開く
   {
     "key": "ctrl+n",
