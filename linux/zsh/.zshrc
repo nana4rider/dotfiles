@@ -32,9 +32,8 @@ export NVM_DIR="$HOME/.nvm"
 
 #alias
 alias vim='code'
-alias ll='ls -al --color'
-alias pg='grep -P'
-alias pgu='grep -Pv'
+alias ll='ls -l --color'
+alias lla='ls -la --color'
 alias zshrc='source ~/.zshrc'
 
 # history
@@ -46,9 +45,14 @@ setopt EXTENDED_HISTORY
 
 # peco
 function peco-select-history() {
-  BUFFER=$(\history -n -r 1 | peco --query "$LBUFFER")
+  emulate -L zsh
+
+  local delimiter=$'\0; \0' newline=$'\n'
+
+  BUFFER=${"$(print -rl ${history//$newline/$delimiter} | peco --query "$LBUFFER")"//$delimiter/$newline}
   CURSOR=$#BUFFER
-  zle clear-screen
+  zle -Rc
+  zle reset-prompt
 }
 zle -N peco-select-history
 bindkey '^r' peco-select-history
