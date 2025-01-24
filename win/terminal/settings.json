@@ -105,7 +105,7 @@
         "startingDirectory": "\\\\wsl$\\Ubuntu\\home\\nana4rider"
       },
       {
-        "backgroundImage": "%USERPROFILE%\\repository\\dotfiles\\win\\terminal\\images\\background\\powershell.png",
+        "backgroundImage": "%USERPROFILE%\\repository\\dotfiles\\win\\terminal\\images\\background\\git-bash.png",
         "backgroundImageAlignment": "bottomRight",
         "backgroundImageStretchMode": "none",
         "commandline": "C:\\Program Files\\Git\\bin\\bash.exe --login -i",
@@ -157,9 +157,6 @@
         "name": "Windows PowerShell"
       },
       {
-        "backgroundImage": "%USERPROFILE%\\repository\\dotfiles\\win\\terminal\\images\\background\\powershell.png",
-        "backgroundImageAlignment": "bottomRight",
-        "backgroundImageStretchMode": "none",
         "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
         "hidden": false,
         "name": "PowerShell",
@@ -171,9 +168,6 @@
         "name": "cmd.exe"
       },
       {
-        "backgroundImage": "%USERPROFILE%\\repository\\dotfiles\\win\\terminal\\images\\background\\powershell.png",
-        "backgroundImageAlignment": "bottomRight",
-        "backgroundImageStretchMode": "none",
         "colorScheme": "Campbell",
         "commandline": "powershell",
         "guid": "{ae988df8-e500-48c7-9267-630bfa8f7a4b}",
