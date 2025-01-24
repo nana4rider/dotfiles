@@ -416,5 +416,10 @@
     "key": "ctrl+k ctrl+l",
     "command": "-editor.toggleFold",
     "when": "editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "alt+space",
+    "command": "-workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && terminalShellIntegrationEnabled && !accessibilityModeEnabled && terminalShellType == 'pwsh'"
   }
 ]
