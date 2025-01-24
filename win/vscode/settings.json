@@ -1,10 +1,4 @@
 {
-  // 新しい行を挿入するとき、ファイルの最後に改行を必ず追加
-  "files.insertFinalNewline": true,
-
-  // TypeScriptでの自動インポートを有効化
-  "typescript.suggest.autoImports": true,
-
   // 新しいファイルを開くとき、常に既存のウィンドウで開く
   "window.openFilesInNewWindow": "off",
 
@@ -19,11 +13,6 @@
 
   // サジェストリストの選択肢で最初の候補を選択
   "editor.suggestSelection": "first",
-
-  // TypeScriptファイルでタブサイズを2に設定
-  "[ts]": {
-    "editor.tabSize": 2
-  },
 
   // アイコンテーマを「material-icon-theme」に設定
   "workbench.iconTheme": "material-icon-theme",
@@ -40,76 +29,14 @@
   // Git同期時に確認を表示しない
   "git.confirmSync": false,
 
-  // JavaScriptファイル移動時にインポート文を自動更新
-  "javascript.updateImportsOnFileMove.enabled": "always",
-
   // スマートコミットを有効化（未ステージングの変更をコミット可能に）
   "git.enableSmartCommit": true,
-
-  // TypeScriptファイルのデフォルトフォーマッターを Prettier に設定
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-
-  // JavaScriptファイルのデフォルトフォーマッターを Prettier に設定
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-
-  // nginxファイルのデフォルトフォーマッターを指定
-  "[nginx]": {
-    "editor.defaultFormatter": "raynigon.nginx-formatter"
-  },
-
-  // JSONCファイルのデフォルトフォーマッターを Prettier に設定
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-
-  // JSONファイルのデフォルトフォーマッターを Prettier に設定
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-
-  // YAMLファイルのデフォルトフォーマッターを Prettier に設定
-  "[yaml]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-
-  // HTMLファイルのデフォルトフォーマッターを Prettier に設定
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-
-  // Markdownファイルのデフォルトフォーマッターを指定
-  "[markdown]": {
-    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
-  },
-
-  // Dockerfileのデフォルトフォーマッターを指定
-  "[dockerfile]": {
-    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
-  },
-
-  "[ignore]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
-
-  "[dotenv]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
 
   // コマンドセンターを有効化（UIにコマンドセンターを表示）
   "window.commandCenter": true,
 
   // エディタのプレビュー機能を無効化（ファイルを開くたびに新しいタブを使用）
   "workbench.editor.enablePreview": false,
-
-  // TypeScriptファイル移動時にインポート文を自動更新
-  "typescript.updateImportsOnFileMove.enabled": "always",
-
-  // PowerShellのアップデート通知を無効化
-  "powershell.promptToUpdatePowerShell": false,
 
   // 統合ターミナルのプロファイル設定
   "terminal.integrated.profiles.windows": {
@@ -124,15 +51,6 @@
 
   // デフォルトの統合ターミナルプロファイルを PowerShell に設定
   "terminal.integrated.defaultProfile.windows": "Git Bash",
-
-  // シェルスクリプトでの設定
-  "[shellscript]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format",
-    // 改行コードを LF に設定
-    "files.eol": "\n",
-    // カラー装飾のデコレーターを無効化
-    "editor.defaultColorDecorators": "never"
-  },
 
   // Gitのタグをプル時に置き換え
   "git.replaceTagsWhenPull": true,
