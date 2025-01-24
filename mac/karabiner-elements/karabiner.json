@@ -1,423 +1,918 @@
 {
-    "global": {
-        "check_for_updates_on_startup": true,
-        "show_in_menu_bar": true,
-        "show_profile_name_in_menu_bar": false
-    },
-    "profiles": [
-        {
-            "complex_modifications": {
-                "parameters": {
-                    "basic.simultaneous_threshold_milliseconds": 50,
-                    "basic.to_delayed_action_delay_milliseconds": 500,
-                    "basic.to_if_alone_timeout_milliseconds": 1000,
-                    "basic.to_if_held_down_threshold_milliseconds": 500,
-                    "mouse_motion_to_scroll.speed": 100
+  "profiles": [
+    {
+      "complex_modifications": {
+        "rules": [
+          {
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "a",
+                  "modifiers": {
+                    "mandatory": [
+                      "right_control",
+                      "left_option"
+                    ]
+                  }
                 },
-                "rules": [
-                    {
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.microsoft\\.rdc.*",
-                                            "^com\\.apple\\.Terminal$",
-                                            "^com\\.googlecode\\.iterm2$"
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "y",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "z",
-                                        "modifiers": [
-                                            "left_command",
-                                            "left_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "type": "basic",
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.microsoft\\.rdc.*"
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "tab",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command"
-                                        ],
-                                        "optional": [
-                                            "shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "tab",
-                                        "modifiers": [
-                                            "left_control"
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "basic",
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.apple\\.Terminal$",
-                                            "^com\\.googlecode\\.iterm2$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "left_arrow",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_control"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "escape"
-                                    },
-                                    {
-                                        "key_code": "b"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "basic",
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.apple\\.Terminal$",
-                                            "^com\\.googlecode\\.iterm2$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "right_arrow",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_control"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "escape"
-                                    },
-                                    {
-                                        "key_code": "f"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "basic",
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.apple\\.Terminal$",
-                                            "^com\\.googlecode\\.iterm2$",
-                                            "^com\\.microsoft\\.rdc.*"
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "w",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "delete_or_backspace",
-                                        "modifiers": [
-                                            "option"
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "basic",
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.apple\\.Terminal$",
-                                            "^com\\.googlecode\\.iterm2$",
-                                            "^com\\.microsoft\\.rdc.*"
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "u",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "delete_or_backspace",
-                                        "modifiers": [
-                                            "command"
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "basic",
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.microsoft\\.rdc.*"
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    },
-                                    {
-                                        "type": "input_source_if",
-                                        "input_sources": [
-                                            {
-                                                "language": "^ja$"
-                                            }
-                                        ]
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "japanese_eisuu"
-                                },
-                                "to": [
-                                {
-                                        "key_code": "j",
-                                        "modifiers": [
-                                            "control",
-                                            "option",
-                                            "shift"
-                                        ]
-                                    },
-                                    {
-                                        "key_code": "japanese_eisuu"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "basic",
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.microsoft\\.rdc.*"
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    },
-                                    {
-                                        "type": "input_source_if",
-                                        "input_sources": [
-                                            {
-                                                "language": "^ja$"
-                                            }
-                                        ]
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "semicolon",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "j",
-                                        "modifiers": [
-                                            "control",
-                                            "option",
-                                            "shift"
-                                        ]
-                                    },
-                                    {
-                                        "key_code": "japanese_eisuu"
-                                    }
-                                ]
-                            }
-                        ]
-                    }
+                "to": [
+                  {
+                    "key_code": "home"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "e",
+                  "modifiers": {
+                    "mandatory": [
+                      "right_control",
+                      "left_option"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "end"
+                  }
+                ],
+                "type": "basic"
+              }
+            ],
+            "conditions": [
+              {
+                "bundle_identifiers": [
+                  "^com\\.jetbrains\\.intellij$"
+                ],
+                "type": "frontmost_application_unless"
+              }
+            ],
+            "from": {
+              "key_code": "left_arrow",
+              "modifiers": {
+                "mandatory": [
+                  "left_control"
                 ]
+              }
             },
-            "devices": [
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "is_pointing_device": false,
-                        "product_id": 60255,
-                        "vendor_id": 1240
-                    },
-                    "ignore": false,
-                    "manipulate_caps_lock_led": true,
-                    "simple_modifications": []
-                }
+            "to": [
+              {
+                "key_code": "left_arrow",
+                "modifiers": [
+                  "left_option"
+                ]
+              }
             ],
-            "fn_function_keys": [
-                {
-                    "from": {
-                        "key_code": "f1"
-                    },
-                    "to": [
-                        {
-                            "consumer_key_code": "display_brightness_decrement"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "f2"
-                    },
-                    "to": [
-                        {
-                            "consumer_key_code": "display_brightness_increment"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "f3"
-                    },
-                    "to": [
-                        {
-                            "apple_vendor_keyboard_key_code": "mission_control"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "f4"
-                    },
-                    "to": [
-                        {
-                            "apple_vendor_keyboard_key_code": "spotlight"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "f5"
-                    },
-                    "to": [
-                        {
-                            "consumer_key_code": "dictation"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "f6"
-                    },
-                    "to": [
-                        {
-                            "key_code": "f6"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "f7"
-                    },
-                    "to": [
-                        {
-                            "consumer_key_code": "rewind"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "f8"
-                    },
-                    "to": [
-                        {
-                            "consumer_key_code": "play_or_pause"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "f9"
-                    },
-                    "to": [
-                        {
-                            "consumer_key_code": "fast_forward"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "f10"
-                    },
-                    "to": [
-                        {
-                            "consumer_key_code": "mute"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "f11"
-                    },
-                    "to": [
-                        {
-                            "consumer_key_code": "volume_decrement"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "f12"
-                    },
-                    "to": [
-                        {
-                            "consumer_key_code": "volume_increment"
-                        }
-                    ]
-                }
+            "type": "basic"
+          },
+          {
+            "conditions": [
+              {
+                "bundle_identifiers": [
+                  "^com\\.jetbrains\\.intellij$"
+                ],
+                "type": "frontmost_application_unless"
+              }
             ],
-            "name": "Default profile",
-            "parameters": {
-                "delay_milliseconds_before_open_device": 1000
+            "from": {
+              "key_code": "left_arrow",
+              "modifiers": {
+                "mandatory": [
+                  "left_control",
+                  "shift"
+                ]
+              }
             },
-            "selected": true,
-            "simple_modifications": [],
-            "virtual_hid_keyboard": {
-                "country_code": 0,
-                "indicate_sticky_modifier_keys_state": true,
-                "mouse_key_xy_scale": 100
+            "to": [
+              {
+                "key_code": "left_arrow",
+                "modifiers": [
+                  "left_option",
+                  "left_shift"
+                ]
+              }
+            ],
+            "type": "basic"
+          },
+          {
+            "conditions": [
+              {
+                "bundle_identifiers": [
+                  "com\\.jetbrains\\.intellijs "
+                ],
+                "type": "frontmost_application_unless"
+              }
+            ],
+            "from": {
+              "key_code": "right_arrow",
+              "modifiers": {
+                "mandatory": [
+                  "left_control"
+                ]
+              }
+            },
+            "to": [
+              {
+                "key_code": "right_arrow",
+                "modifiers": [
+                  "left_option"
+                ]
+              }
+            ],
+            "type": "basic"
+          },
+          {
+            "conditions": [
+              {
+                "bundle_identifiers": [
+                  "^com\\.jetbrains\\.intellij$"
+                ],
+                "type": "frontmost_application_unless"
+              }
+            ],
+            "from": {
+              "key_code": "right_arrow",
+              "modifiers": {
+                "mandatory": [
+                  "left _control",
+                  "shift"
+                ]
+              }
+            },
+            "to": [
+              {
+                "key_code": "right_arrow",
+                "modifiers": [
+                  "left_option",
+                  "left_shift"
+                ]
+              }
+            ],
+            "type": "basic"
+          },
+          {
+            "conditions": [
+              {
+                "bundle_identifiers": [],
+                "type": "frontmost_application_unless"
+              }
+            ],
+            "from": {
+              "key_code": "a",
+              "modifiers": {
+                "mandatory": [
+                  "left_control"
+                ]
+              }
+            },
+            "to": [
+              {
+                "key_code": "a",
+                "modifiers": [
+                  "left_command"
+                ]
+              }
+            ],
+            "type": "basic"
+          },
+          {
+            "conditions": [
+              {
+                "bundle_identifiers": [
+                  "^com\\.apple\\.Terminal$",
+                  "^com\\.googlecode\\.iterm2$",
+                  "^com\\.jetbrains\\.intellij$"
+                ],
+                "type": "frontmost_application_unless"
+              }
+            ],
+            "from": {
+              "key_code": "x",
+              "modifiers": {
+                "mandatory": [
+                  "left_control"
+                ]
+              }
+            },
+            "to": [
+              {
+                "key_code": "x",
+                "modifiers": [
+                  "left_command"
+                ]
+              }
+            ],
+            "type": "basic"
+          },
+          {
+            "conditions": [
+              {
+                "bundle_identifiers": [
+                  "^com\\.apple\\.Terminal$",
+                  "^com\\.googlecode\\.iterm2$",
+                  "^com\\.jetbrains\\.intellij$"
+                ],
+                "type": "frontmost_application_unless"
+              }
+            ],
+            "from": {
+              "key_code": "c",
+              "modifiers": {
+                "mandatory": [
+                  "left_control"
+                ]
+              }
+            },
+            "to": [
+              {
+                "key_code": "c",
+                "modifiers": [
+                  "left_command"
+                ]
+              }
+            ],
+            "type": "basic"
+          },
+          {
+            "conditions": [
+              {
+                "bundle_identifiers": [
+                  "^com\\.apple\\.Terminal$",
+                  "^com\\.googlecode\\.iterm2$",
+                  "^com\\.jetbrains\\.intellij$"
+                ],
+                "type": "frontmost_application_unless"
+              }
+            ],
+            "from": {
+              "key_code": "v",
+              "modifiers": {
+                "mandatory": [
+                  "left_control"
+                ]
+              }
+            },
+            "to": [
+              {
+                "key_code": "v",
+                "modifiers": [
+                  "left_command"
+                ]
+              }
+            ],
+            "type": "basic"
+          },
+          {
+            "conditions": [
+              {
+                "bundle_identifiers": [
+                  "^com\\.apple\\.Terminal$",
+                  "com.googlecode\\.iterm2$",
+                  "^com\\.jetbrains\\.intellij$"
+                ],
+                "type": "frontmost_application_unless"
+              }
+            ],
+            "from": {
+              "key_code": "z",
+              "modifiers": {
+                "mandatory": [
+                  "left_control"
+                ]
+              }
+            },
+            "to": [
+              {
+                "key_code": "z",
+                "modifiers": [
+                  "left_command"
+                ]
+              }
+            ],
+            "type": "basic"
+          },
+          {
+            "conditions": [
+              {
+                "bundle_identifiers": [
+                  "^com\\.apple\\.Terminal$",
+                  "^com\\.googlecode\\.iterm2$",
+                  "^com\\.jetbrains\\.intellij$"
+                ],
+                "type": "frontmost_application_unless"
+              }
+            ],
+            "from": {
+              "key_code": "y",
+              "modifiers": {
+                "mandatory": [
+                  "left_control"
+                ]
+              }
+            },
+            "to": [
+              {
+                "key_code": "z",
+                "modifiers": [
+                  "left_command",
+                  "left_shift"
+                ]
+              }
+            ],
+            "type": "basic"
+          },
+          {
+            "conditions": [
+              {
+                "bundle_identifiers": [
+                  "^com\\.google\\.Chrome$"
+                ],
+                "type": "frontmost_application_if"
+              }
+            ],
+            "from": {
+              "key_code": "f",
+              "modifiers": {
+                "mandatory": [
+                  "left_control"
+                ]
+              }
+            },
+            "to": [
+              {
+                "key_code": "f",
+                "modifiers": [
+                  "left_command"
+                ]
+              }
+            ],
+            "type": "basic"
+          },
+          {
+            "conditions": [
+              {
+                "bundle_identifiers": [
+                  "^com\\.google\\.Chrome$"
+                ],
+                "type": "frontmost_application_if"
+              }
+            ],
+            "from": {
+              "key_code": "r",
+              "modifiers": {
+                "m andatory": [
+                  "left_control"
+                ]
+              }
+            },
+            "to": [
+              {
+                "key_code": "r",
+                "modifiers": [
+                  "left_command"
+                ]
+              }
+            ],
+            "type": "basic"
+          },
+          {
+            "conditions": [
+              {
+                "bundle_identifiers": [
+                  "^com\\.google\\.Chrome$"
+                ],
+                "type": "frontmost_appli cation_if"
+              }
+            ],
+            "from": {
+              "key_code": "i",
+              "modifiers": {
+                "mandatory": [
+                  "left_control",
+                  "shift"
+                ]
+              }
+            },
+            "to": [
+              {
+                "key_code": "f12"
+              }
+            ],
+            "type": "basic"
+          },
+          {
+            "conditions": [
+              {
+                "bundle_identifiers": [
+                  "com\\.google\\.Chrome$"
+                ],
+                "type": "frontmost_application_if"
+              },
+              {
+                "input_sources": [
+                  {
+                    "language": "en"
+                  }
+                ],
+                "type": "input_source_if"
+              }
+            ],
+            "from": {
+              "key_code": "t",
+              "modifiers": {
+                "mandatory": [
+                  "left_control"
+                ]
+              }
+            },
+            "to": [
+              {
+                "key_code": "t",
+                "modifiers": [
+                  "left_command"
+                ]
+              }
+            ],
+            "type": "basic"
+          },
+          {
+            "conditions": [
+              {
+                "bundle_identifiers": [
+                  "^com\\.google\\.Chrome$"
+                ],
+                "type": "frontmost_application_if"
+              }
+            ],
+            "from": {
+              "key_code": "t",
+              "mod ifiers": {
+                "mandatory": [
+                  "left_control",
+                  "shift"
+                ]
+              }
+            },
+            "to": [
+              {
+                "key_code": "t",
+                "modifiers": [
+                  "left_command",
+                  "left_shift"
+                ]
+              }
+            ],
+            "type": "basic"
+          },
+          {
+            "conditions": [
+              {
+                "bundle_identifiers": [
+                  "com\\\\.google\\.Chrome$"
+                ],
+                "type": "frontmost_application_if"
+              }
+            ],
+            "from": {
+              "key_code": "n",
+              "modifiers": {
+                "mandatory": [
+                  "left_control"
+                ]
+              }
+            },
+            "to": [
+              {
+                "key_code": "n",
+                "modifiers": [
+                  "left_command"
+                ]
+              }
+            ],
+            "type": "basic"
+          },
+          {
+            "conditions": [
+              {
+                "bundle_identifiers": [
+                  "com.google\\.Chrome$"
+                ],
+                "type": "frontmost_application_if"
+              }
+            ],
+            "from": {
+              "key_code": "n",
+              "modifiers": {
+                "mandatory": [
+                  "left_control",
+                  "shift"
+                ]
+              }
+            },
+            "to": [
+              {
+                "key_cod e": "n",
+                "modifiers": [
+                  "left_command",
+                  "left_shift"
+                ]
+              }
+            ],
+            "type": "basic"
+          },
+          {
+            "conditions": [
+              {
+                "bundle_identifiers": [
+                  "^com\\.google\\.Chrome$"
+                ],
+                "type": "frontmost_application_if"
+              }
+            ],
+            "from": {
+              "key_code": "w",
+              "modifiers": {
+                "mandatory": [
+                  "left_control"
+                ]
+              }
+            },
+            "to": [
+              {
+                "key_code": "w",
+                "modifiers": [
+                  "left_command"
+                ]
+              }
+            ],
+            "type": "basic"
+          },
+          {
+            "conditions": [
+              {
+                "bundle_identifiers": [
+                  "com.google\\.Chrome$"
+                ],
+                "type": "frontmost_application_if"
+              }
+            ],
+            "from": {
+              "key_code": "1",
+              "modifiers": {
+                "mandatory": [
+                  "left_control"
+                ]
+              }
+            },
+            "to": [
+              {
+                "key_code": "1",
+                "modifiers": [
+                  "left_command"
+                ]
+              }
+            ],
+            "type": "basic"
+          },
+          {
+            "conditions": [
+              {
+                " bundle_identifiers": [
+                  "com.google\\.Chrome$"
+                ],
+                "type": "frontmost_application_if"
+              }
+            ],
+            "from": {
+              "key_code": "h",
+              "modifiers": {
+                "mandatory": [
+                  "left_control"
+                ]
+              }
+            },
+            "to": [
+              {
+                "key_code": "y",
+                "modifiers": [
+                  "left_command"
+                ]
+              }
+            ],
+            "type": "basic"
+          },
+          {
+            "conditions": [
+              {
+                "bundle_identifiers": [
+                  "^com\\.google\\.Chrome$"
+                ],
+                "type": "frontmost_application_if"
+              }
+            ],
+            "from": {
+              "key_code": "left_arrow",
+              "modifiers": {
+                "manda tory": [
+                  "option"
+                ]
+              }
+            },
+            "to": [
+              {
+                "key_code": "open_bracket",
+                "modifiers": [
+                  "left_command"
+                ]
+              }
+            ],
+            "type": "basic"
+          },
+          {
+            "conditions": [
+              {
+                "bundle_identifiers": [
+                  "com\\.google\\Chrome$"
+                ],
+                "type": "frontmost_application_if"
+              }
+            ],
+            "from": {
+              "key_code": "right_arrow",
+              "modifiers": {
+                "mandatory": [
+                  "option"
+                ]
+              }
+            },
+            "to": [
+              {
+                "key_code": "close_bracket",
+                "modifiers": [
+                  "left_command"
+                ]
+              }
+            ],
+            "type": "basic"
+          },
+          {
+            "conditions": [
+              {
+                "bun dle_identifiers": [
+                  "^com\\google\\Chrome$"
+                ],
+                "type": "frontmost_application_if"
+              }
+            ],
+            "from": {
+              "key_code": "home",
+              "modifiers": {
+                "mandatory": [
+                  "left_option"
+                ]
+              }
+            },
+            "to": [
+              {
+                "key_code": "h",
+                "modifiers": [
+                  " left_command",
+                  "left_shift"
+                ]
+              }
+            ],
+            "type": "basic"
+          },
+          {
+            "conditions": [
+              {
+                "bundle_identifiers": [
+                  "^com\\.tinyspeck\\.slackmacgap$"
+                ],
+                "type": "frontmost_application_if"
+              }
+            ],
+            "from": {
+              "key_code": "return_or_enter",
+              "modifiers": {
+                "mandatory": [
+                  "left_control"
+                ]
+              }
+            },
+            "to": [
+              {
+                "key_code": "return_or_enter",
+                "modifiers": [
+                  "left_command"
+                ]
+              }
+            ],
+            "type": "basic"
+          },
+          {
+            "conditions": [
+              {
+                "bundle_identifiers": [
+                  "com\\.tinyspeck\\.slackmacgap$"
+                ],
+                "type": "frontmost_application_if"
+              }
+            ],
+            "from": {
+              "key_code": "f13"
+            },
+            "to": [
+              {
+                "key_code": "c",
+                "modifiers": [
+                  "left_command",
+                  "left_option",
+                  "left_shift"
+                ]
+              }
+            ],
+            "type": "basic"
+          },
+          {
+            "conditions": [
+              {
+                "bundle_identifiers": [
+                  "com.tinyspeckslackmacgap$"
+                ],
+                "type": "frontmost_application_if"
+              }
+            ],
+            "from": {
+              "key_code": "c",
+              "modifiers": {
+                "mandatory": [
+                  "left_control",
+                  "shift"
+                ]
+              }
+            },
+            "to": [
+              {
+                "ke y_code": "c",
+                "modifiers": [
+                  "left_command",
+                  "left_shift"
+                ]
+              }
+            ],
+            "type": "basic"
+          },
+          {
+            "conditions": [
+              {
+                "bundle_identifiers": [
+                  "^com\\.apple\\.finder$"
+                ],
+                "type": "frontmost application_if"
+              }
+            ],
+            "from": {
+              "pointing_button": "button4"
+            },
+            "to": [
+              {
+                "key_code": "open_bracket",
+                "modifiers": [
+                  "left_command"
+                ]
+              }
+            ],
+            "type": "basic"
+          },
+          {
+            "conditions": [
+              {
+                "bundle_identifiers": [
+                  "com\\.apple\\.finder$"
+                ],
+                "type": "frontmost_a pplication_if"
+              }
+            ],
+            "from": {
+              "pointing_button": "button5"
+            },
+            "to": [
+              {
+                "key_code": "close_bracket",
+                "modifiers": [
+                  "left_command"
+                ]
+              }
+            ],
+            "type": "basic"
+          },
+          {
+            "conditions": [
+              {
+                "bundle_identifiers": [
+                  "com\\.apple\\.finder$"
+                ],
+                "type": "frontmost_application_if"
+              }
+            ],
+            "from": {
+              "key_code": "f2"
+            },
+            "to": [
+              {
+                "key_code": "return_or_enter"
+              }
+            ],
+            "type": "basic"
+          },
+          {
+            "conditions": [
+              {
+                "bundle_identifiers": [
+                  "com\\.apple\\.finder$"
+                ],
+                "type": "frontmost_application_if"
+              }
+            ],
+            "from": {
+              "key_code": "return_or_enter"
+            },
+            "to": [
+              {
+                "key_code": "down_arrow",
+                "modifiers": [
+                  "left_command"
+                ]
+              }
+            ],
+            "type": "basic"
+          }
+        ]
+      },
+      "devices": [
+        {
+          "identifiers ": {
+            "is_pointing_device": true,
+            "product_id": 45093,
+            "vendor_id": 1133
+          },
+          "ignore": false
+        },
+        {
+          "identifiers": {
+            "is_keyboard": true,
+            "is_pointing device": true,
+            "product_id": 79,
+            "vendor_id": 8938
+          },
+          "ignore": false
+        },
+        {
+          "identifiers": {
+            "is_pointing_device": true,
+            "product_id": 32793,
+            "vendor_id": 1149
+          },
+          "ignore": false,
+          "simple_modifications": [
+            {
+              "from": {
+                "pointing_button": "button3"
+              },
+              "to": [
+                {
+                  "pointing_button ": "button4"
+                }
+              ]
+            },
+            {
+              "from": {
+                "pointing_button": "button4"
+              },
+              "to": [
+                {
+                  "pointing_button": "buttons5"
+                }
+              ]
             }
+          ]
+        },
+        {
+          "identifiers": {
+            "is_pointing_device": true,
+            "product_id": 45111,
+            "vendor_id": 1133
+          },
+          "ignore": false
         }
-    ]
+      ],
+      "name": "Default profile",
+      "selected": true,
+      "virtual_hid_keyboard": {
+        "keyboard_type_v2": "ansi"
+      }
+    }
+  ]
 }
