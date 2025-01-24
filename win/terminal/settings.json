@@ -20,11 +20,11 @@
         {
             "command": 
             {
-                "action": "nextTab",
+                "action": "prevTab",
                 "tabSwitcherMode": "disabled"
             },
-            "id": "User.nextTab.87C324ED",
-            "keys": "ctrl+tab"
+            "id": "User.prevTab.87C324ED",
+            "keys": "ctrl+shift+tab"
         },
         {
             "command": "find",
@@ -34,11 +34,11 @@
         {
             "command": 
             {
-                "action": "prevTab",
+                "action": "nextTab",
                 "tabSwitcherMode": "disabled"
             },
-            "id": "User.prevTab.87C324ED",
-            "keys": "ctrl+shift+tab"
+            "id": "User.nextTab.87C324ED",
+            "keys": "ctrl+tab"
         },
         {
             "command": 
@@ -49,6 +49,11 @@
             "keys": "alt+q"
         },
         {
+            "command": "openNewTabDropdown",
+            "id": "User.openNewTabDropdown",
+            "keys": "alt+f"
+        },
+        {
             "command": 
             {
                 "action": "splitPane",
@@ -57,11 +62,6 @@
             },
             "id": "User.splitPane.A6751878",
             "keys": "alt+shift+d"
-        },
-        {
-            "command": "openNewTabDropdown",
-            "id": "User.openNewTabDropdown",
-            "keys": "alt+f"
         },
         {
             "command": 
@@ -142,7 +142,7 @@
                 "backgroundImage": "%USERPROFILE%\\repository\\dotfiles\\win\\terminal\\images\\background\\raspberry-pi.png",
                 "backgroundImageAlignment": "bottomRight",
                 "backgroundImageStretchMode": "none",
-                "commandline": "ssh nana4rider@192.168.1.30 -o ServerAliveInterval=60",
+                "commandline": "ssh nana4rider@raspberrypi1 -o ServerAliveInterval=60",
                 "guid": "{6db862ec-c3b8-4921-997c-2d4dcff5bf30}",
                 "icon": "%USERPROFILE%\\repository\\dotfiles\\win\\terminal\\images\\icon\\raspberry-pi.ico",
                 "name": "Raspberry Pi 4 Model B"
@@ -151,7 +151,7 @@
                 "backgroundImage": "%USERPROFILE%\\repository\\dotfiles\\win\\terminal\\images\\background\\hass.png",
                 "backgroundImageAlignment": "bottomRight",
                 "backgroundImageStretchMode": "none",
-                "commandline": "ssh root@192.168.1.20 -o ServerAliveInterval=60",
+                "commandline": "ssh root@homeassistant -o ServerAliveInterval=60",
                 "guid": "{6db862ec-c3b8-4921-997c-2d4dcff5bf31}",
                 "icon": "%USERPROFILE%\\repository\\dotfiles\\win\\terminal\\images\\icon\\hass.ico",
                 "name": "Home Assistant"
@@ -160,7 +160,7 @@
                 "backgroundImage": "%USERPROFILE%\\repository\\dotfiles\\win\\terminal\\images\\background\\raspberry-pi.png",
                 "backgroundImageAlignment": "bottomRight",
                 "backgroundImageStretchMode": "none",
-                "commandline": "ssh nana4rider@192.168.1.31 -o ServerAliveInterval=60",
+                "commandline": "ssh nana4rider@raspberrypi2 -o ServerAliveInterval=60",
                 "guid": "{0b72c3c9-059e-42dd-8f44-c0822c78e2e6}",
                 "icon": "%USERPROFILE%\\repository\\dotfiles\\win\\terminal\\images\\icon\\raspberry-pi.ico",
                 "name": "Raspberry Pi Zero [\u7384\u95a2]"
@@ -169,7 +169,7 @@
                 "backgroundImage": "%USERPROFILE%\\repository\\dotfiles\\win\\terminal\\images\\background\\raspberry-pi.png",
                 "backgroundImageAlignment": "bottomRight",
                 "backgroundImageStretchMode": "none",
-                "commandline": "ssh nana4rider@192.168.1.32 -o ServerAliveInterval=60",
+                "commandline": "ssh nana4rider@raspberrypi3 -o ServerAliveInterval=60",
                 "guid": "{210567c9-3a86-4969-b9b4-d0c316bffc78}",
                 "icon": "%USERPROFILE%\\repository\\dotfiles\\win\\terminal\\images\\icon\\raspberry-pi.ico",
                 "name": "Raspberry Pi Zero [\u52dd\u624b\u53e3]"
