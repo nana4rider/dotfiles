@@ -1,4 +1,3 @@
-
 [
   // グローバルキーバインド設定ファイルを開く
   {
@@ -182,6 +181,11 @@
     "key": "ctrl+shift+o",
     "command": "workbench.action.files.openLocalFile",
     "when": "remoteFileDialogVisible"
+  },
+  // ファイルを閉じる
+  {
+    "key": "alt+q",
+    "command": "workbench.action.closeActiveEditor"
   },
   // 参照を開く
   {

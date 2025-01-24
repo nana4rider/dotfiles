@@ -22,25 +22,6 @@ return
 return
 #IfWinActive
 
-; A5M2
-#IfWinActive, ahk_exe A5M2.exe
-; F18でツリーにフォーカス
-F18::Send, {F7}
-; F19でエディタにフォーカス
-F19::Send, {F8}
-^s::Send, ^+r
-^o::
-    Send, !e
-    Sleep 50
-    Send, 0
-return
-#IfWinActive
-
-; Slackのコードブロック
-#IfWinActive, ahk_exe Slack.exe
-F16::Send, ^!+c
-#IfWinActive
-
 ; like bash
 #if WinGetProcessName() = "WindowsTerminal.exe" && InStr(WinGetTitle(), "PowerShell")
 ^a::Send, {Home}
@@ -96,13 +77,8 @@ return
     }
 return
 
-; Win+Ctrl+Rを、オリジナルのWin+Rと同じ動作に変更
-#^r::Run, "%ComSpec%" /c start "" explorer Shell:::{2559a1f3-21d7-11d4-bdaf-00c04f60b9f0}, , Hide
-
-; Win+Rを、クリップボードの内容を元に関連付けで開くコマンドに変更
-#r::
-    EnvGet, fileExplorer, FILE_EXPLORER
-    
+; Win+Ctrl+Rを、クリップボードの内容を元に関連付けで開くコマンドに変更
+#^r::
     tmpclip := clipboard
     if (InStr(tmpclip, "`r`n") != 0) {
         tmpArray := StrSplit(tmpclip, "`r`n")
@@ -137,26 +113,18 @@ return
 
         fileAttr := FileExist(filePath)
         if (RegExMatch(fileAttr, "D")) {
-            ; ディレクトリの場合はTablacus Explorerで開く
-            Run, "%fileExplorer%" "%filePath%"
+            ; ディレクトリの場合はExplorerで開く
+            Run, "explorer" "%filePath%"
             openCount++
         } else if (fileAttr) {
             Run, "%filePath%"
             openCount++
         }
     }
-    
-    ; クリップボードの内容で何も実行できなかった場合、ファイル名を指定して実行を開く
-    if (openCount = 0) {
-        Run, "%ComSpec%" /c start "" explorer Shell:::{2559a1f3-21d7-11d4-bdaf-00c04f60b9f0}, , Hide
-    }
 return
 
-; Win+Eを、クリップボードの内容を元にTablacus Explorerで開くコマンドに変更
-; 環境変数 FILE_EXPLORER にTablacus Explorerのパスを設定しておく
+; Win+Eを、クリップボードの内容を元にExplorerで開くコマンドに変更
 #e::
-    EnvGet, fileExplorer, FILE_EXPLORER
-    
     tmpclip := clipboard
     if (InStr(tmpclip, "`r`n") != 0) {
         tmpArray := StrSplit(tmpclip, "`r`n")
@@ -168,6 +136,10 @@ return
     openCount := 0
     loop, % tmpArray.Length() {
         filePath := Trim(tmpArray[A_Index])
+        if (filePath = "") {
+            continue
+        }
+
         if (RegExMatch(filePath, "^""(.+)""$", $)) {
             filePath := $1
         }
@@ -183,33 +155,24 @@ return
         fileAttr := FileExist(filePath)
         if (RegExMatch(fileAttr, "D")) {
             ; ディレクトリの場合はそのまま開く
-            Run, "%fileExplorer%" "%filePath%"
+            Run, "explorer" "%filePath%"
             openCount++
         } else if (fileAttr) {
             ; ファイルの場合はフォーカスを当てた状態で開く
             select := "/select" . Chr(44)
-            Run, "%fileExplorer%" %select%"%filePath%"
+            Run, "explorer" %select%"%filePath%"
             openCount++
         } else {
             if (openCount = 0) {
                 ; ファイルが存在しない場合はホームディレクトリを開く
                 EnvGet, userProfile, USER_PROFILE
-                Run, "%fileExplorer%" "%userProfile%"
+                Run, "explorer" "%userProfile%"
             }
             exit
         }
     }
 return
 
-; Tablacus Explorerにおいて、アドレスバーやツリービューにフォーカス時
-; 一部ショートカットが効かない問題を解消する
-#if WinGetProcessName() = "TE64.exe" && (ControlGetFocus() = "SysTreeView321" || ControlGetFocus() = "Chrome_WidgetWin_11") ;
-^t::Send, {Tab}{Down}^t
-^w::Send, {Tab}{Down}^w
-F13::Send, {Tab}{Down}{F13}
-F19::Send, {Tab}{Down}
-#if
-    
 ; クリップボードのWindowsとWLSのパスを相互変換
 ; パスにスペースが含まれる場合はダブルクォートで囲みます。
 #p::
