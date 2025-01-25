@@ -211,6 +211,11 @@
     "command": "editor.action.smartSelect.shrink",
     "when": "editorTextFocus && !textCompareEditorVisible"
   },
+  // 行の削除
+  {
+    "key": "ctrl+d",
+    "command": "editor.action.deleteLines"
+  }
   // デフォルトキーバインドの削除
   {
     "key": "ctrl+k ctrl+s",
@@ -425,5 +430,10 @@
     "key": "alt+space",
     "command": "-workbench.action.terminal.sendSequence",
     "when": "terminalFocus && terminalShellIntegrationEnabled && !accessibilityModeEnabled && terminalShellType == 'pwsh'"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "-notebook.addFindMatchToSelection",
+    "when": "config.notebook.multiCursor.enabled && notebookCellEditorFocused && activeEditor == 'workbench.editor.notebook'"
   }
 ]
