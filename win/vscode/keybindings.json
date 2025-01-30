@@ -215,7 +215,7 @@
   {
     "key": "ctrl+d",
     "command": "editor.action.deleteLines"
-  }
+  },
   // デフォルトキーバインドの削除
   {
     "key": "ctrl+k ctrl+s",
