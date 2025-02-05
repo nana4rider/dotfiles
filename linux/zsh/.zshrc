@@ -61,23 +61,4 @@ bindkey '^r' peco-select-history
 bindkey "^[[1;5D" backward-word
 bindkey "^[[1;5C" forward-word
 
-# --- Local Ubuntu ---
-
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# use VS Code
-alias vim='code'
-
-function peco-open-repository() {
-  local dir=$(ls ~/repository | peco --query "$LBUFFER")
-  if [ -n "${dir}" ]; then
-    BUFFER="code ~/repository/${dir}"
-    zle accept-line
-  fi
-  zle clear-screen
-}
-zle -N peco-open-repository
-bindkey '^o' peco-open-repository
+source "$HOME/.zshrc.local"
