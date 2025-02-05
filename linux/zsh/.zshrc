@@ -1,3 +1,5 @@
+export PATH=$HOME/.local/bin:$PATH
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -26,25 +28,22 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 #alias
-alias vim='code'
 alias ll='ls -l --color'
 alias lla='ls -la --color'
-alias zshrc='source ~/.zshrc'
+alias reload='source ~/.zshrc'
 
 # history
 export HISTFILE=${HOME}/.zsh_history
-export HISTSIZE=1000
+export HISTSIZE=10000
 export SAVEHIST=100000
-setopt hist_ignore_dups
-setopt EXTENDED_HISTORY
+setopt inc_append_history        # コマンド実行後すぐに履歴を保存
+setopt share_history             # 他のターミナルと履歴を共有
+setopt hist_ignore_dups          # 直前と同じコマンドの場合は履歴に追加しない
+setopt hist_ignore_all_dups      # 履歴の重複を削除
+setopt hist_ignore_space         # スペースから始まるコマンドを履歴に残さない
 
-# peco
+# ^rで履歴の表示
 function peco-select-history() {
   emulate -L zsh
 
@@ -58,7 +57,21 @@ function peco-select-history() {
 zle -N peco-select-history
 bindkey '^r' peco-select-history
 
-function peco-open-code() {
+# 単語単位の移動
+bindkey "^[[1;5D" backward-word
+bindkey "^[[1;5C" forward-word
+
+# --- Local Ubuntu ---
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# use VS Code
+alias vim='code'
+
+function peco-open-repository() {
   local dir=$(ls ~/repository | peco --query "$LBUFFER")
   if [ -n "${dir}" ]; then
     BUFFER="code ~/repository/${dir}"
@@ -66,8 +79,5 @@ function peco-open-code() {
   fi
   zle clear-screen
 }
-zle -N peco-open-code
-bindkey '^o' peco-open-code
-
-bindkey "^[[1;5D" backward-word
-bindkey "^[[1;5C" forward-word
+zle -N peco-open-repository
+bindkey '^o' peco-open-repository
