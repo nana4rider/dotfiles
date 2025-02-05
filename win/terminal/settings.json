@@ -119,10 +119,10 @@
         "backgroundImage": "%USERPROFILE%\\repository\\dotfiles\\win\\terminal\\images\\background\\raspberry-pi.png",
         "backgroundImageAlignment": "bottomRight",
         "backgroundImageStretchMode": "none",
-        "commandline": "ssh nana4rider@raspberrypi1 -o ServerAliveInterval=60",
+        "commandline": "ssh nana4rider@manager -o ServerAliveInterval=60",
         "guid": "{6db862ec-c3b8-4921-997c-2d4dcff5bf30}",
         "icon": "%USERPROFILE%\\repository\\dotfiles\\win\\terminal\\images\\icon\\raspberry-pi.ico",
-        "name": "Raspberry Pi 4 Model B"
+        "name": "Manager"
       },
       {
         "backgroundImage": "%USERPROFILE%\\repository\\dotfiles\\win\\terminal\\images\\background\\hass.png",
@@ -137,19 +137,19 @@
         "backgroundImage": "%USERPROFILE%\\repository\\dotfiles\\win\\terminal\\images\\background\\raspberry-pi.png",
         "backgroundImageAlignment": "bottomRight",
         "backgroundImageStretchMode": "none",
-        "commandline": "ssh nana4rider@raspberrypi2 -o ServerAliveInterval=60",
+        "commandline": "ssh nana4rider@frontdoor -o ServerAliveInterval=60",
         "guid": "{0b72c3c9-059e-42dd-8f44-c0822c78e2e6}",
         "icon": "%USERPROFILE%\\repository\\dotfiles\\win\\terminal\\images\\icon\\raspberry-pi.ico",
-        "name": "Raspberry Pi Zero [\u7384\u95a2]"
+        "name": "Frontdoor"
       },
       {
         "backgroundImage": "%USERPROFILE%\\repository\\dotfiles\\win\\terminal\\images\\background\\raspberry-pi.png",
         "backgroundImageAlignment": "bottomRight",
         "backgroundImageStretchMode": "none",
-        "commandline": "ssh nana4rider@raspberrypi3 -o ServerAliveInterval=60",
+        "commandline": "ssh nana4rider@backdoor -o ServerAliveInterval=60",
         "guid": "{210567c9-3a86-4969-b9b4-d0c316bffc78}",
         "icon": "%USERPROFILE%\\repository\\dotfiles\\win\\terminal\\images\\icon\\raspberry-pi.ico",
-        "name": "Raspberry Pi Zero [\u52dd\u624b\u53e3]"
+        "name": "Backdoor"
       },
       {
         "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
