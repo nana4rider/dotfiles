@@ -854,7 +854,7 @@
   # Context color when running with privileges.
   typeset -g POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND=178
   # Context color in SSH without privileges.
-  typeset -g POWERLEVEL9K_CONTEXT_{DEFAULT,REMOTE,REMOTE_SUDO}_FOREGROUND=$(cat ~/.contextcolor)
+  typeset -g POWERLEVEL9K_CONTEXT_{DEFAULT,REMOTE,REMOTE_SUDO}_FOREGROUND=$(cat ~/.contextcolor 2>/dev/null || echo 15)
   # Default context color (no privileges, no SSH).
   typeset -g POWERLEVEL9K_CONTEXT_FOREGROUND=180
 
