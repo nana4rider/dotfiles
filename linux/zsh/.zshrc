@@ -61,4 +61,6 @@ bindkey '^r' peco-select-history
 bindkey "^[[1;5D" backward-word
 bindkey "^[[1;5C" forward-word
 
-source "$HOME/.zshrc.local"
+if [[ -r "$HOME/.zshrc.local" ]]; then
+  source "$HOME/.zshrc.local"
+fi
