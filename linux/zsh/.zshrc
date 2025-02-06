@@ -21,9 +21,11 @@ autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
 # Zinit plugin
-zinit ice depth=1; zinit light romkatv/powerlevel10k
+zinit ice depth=1
+zinit light romkatv/powerlevel10k
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma-continuum/fast-syntax-highlighting
+zinit light zdharma/history-search-multi-word
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -42,20 +44,6 @@ setopt share_history             # 他のターミナルと履歴を共有
 setopt hist_ignore_dups          # 直前と同じコマンドの場合は履歴に追加しない
 setopt hist_ignore_all_dups      # 履歴の重複を削除
 setopt hist_ignore_space         # スペースから始まるコマンドを履歴に残さない
-
-# ^rで履歴の表示
-function peco-select-history() {
-  emulate -L zsh
-
-  local delimiter=$'\0; \0' newline=$'\n'
-
-  BUFFER=${"$(print -rl ${history//$newline/$delimiter} | peco --query "$LBUFFER")"//$delimiter/$newline}
-  CURSOR=$#BUFFER
-  zle -Rc
-  zle reset-prompt
-}
-zle -N peco-select-history
-bindkey '^r' peco-select-history
 
 # 単語単位の移動
 bindkey "^[[1;5D" backward-word
