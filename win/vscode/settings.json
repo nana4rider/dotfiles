@@ -56,5 +56,8 @@
   "git.replaceTagsWhenPull": true,
 
   // カラーテーマを「Default Dark+」に設定
-  "workbench.colorTheme": "Default Dark+"
+  "workbench.colorTheme": "Default Dark+",
+
+  // スタートアップを表示しない
+  "workbench.startupEditor": "none"
 }
