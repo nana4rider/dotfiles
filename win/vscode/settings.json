@@ -2,6 +2,9 @@
   // 新しいファイルを開くとき、常に既存のウィンドウで開く
   "window.openFilesInNewWindow": "off",
 
+  // 新規ワークスペースを別ウインドウで開く
+  "window.openFoldersInNewWindow": "on",
+
   // 信頼されていないファイルを開く際の動作を「開く」に設定
   "security.workspace.trust.untrustedFiles": "open",
 
@@ -21,7 +24,7 @@
   "pasteImage.path": "${currentFileDir}/images",
 
   // 差分エディタで空白の違いを無視
-  "diffEditor.ignoreTrimWhitespace": true,
+  "diffEditor.ignoreTrimWhitespace": false,
 
   // Gitの自動フェッチを有効化
   "git.autofetch": true,
@@ -59,5 +62,8 @@
   "workbench.colorTheme": "Default Dark+",
 
   // スタートアップを表示しない
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+
+  "security.allowedUNCHosts": ["wsl.localhost", "hass.home"],
+  "security.promptForLocalFileProtocolHandling": false
 }
