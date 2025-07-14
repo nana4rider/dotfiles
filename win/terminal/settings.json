@@ -173,7 +173,7 @@
                 "backgroundImage": "%USERPROFILE%\\repository\\dotfiles\\win\\terminal\\images\\background\\hass.png",
                 "backgroundImageAlignment": "bottomRight",
                 "backgroundImageStretchMode": "none",
-                "commandline": "ssh root@hass.home -o ServerAliveInterval=60",
+                "commandline": "wsl ssh root@hass.home -o ServerAliveInterval=60",
                 "guid": "{6db862ec-c3b8-4921-997c-2d4dcff5bf31}",
                 "icon": "%USERPROFILE%\\repository\\dotfiles\\win\\terminal\\images\\icon\\hass.ico",
                 "name": "Home Assistant"
@@ -195,6 +195,15 @@
                 "guid": "{210567c9-3a86-4969-b9b4-d0c316bffc78}",
                 "icon": "%USERPROFILE%\\repository\\dotfiles\\win\\terminal\\images\\icon\\raspberry-pi.ico",
                 "name": "Backdoor"
+            },
+            {
+                "backgroundImage": "%USERPROFILE%\\repository\\dotfiles\\win\\terminal\\images\\background\\raspberry-pi.png",
+                "backgroundImageAlignment": "bottomRight",
+                "backgroundImageStretchMode": "none",
+                "commandline": "ssh nana4rider@octopi.home -o ServerAliveInterval=60",
+                "guid": "{27DF299A-9609-E568-A428-907F8C5EFDDA}",
+                "icon": "%USERPROFILE%\\repository\\dotfiles\\win\\terminal\\images\\icon\\raspberry-pi.ico",
+                "name": "OctoPi"
             },
             {
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
